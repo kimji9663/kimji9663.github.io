@@ -1,9 +1,9 @@
 {
-  "name": "gatsby-starter-blog",
+  "name": "Jihye Kim's Blog",
   "private": true,
-  "description": "A starter for a blog powered by Gatsby and Markdown",
+  "description": "공부하고 기록하는 블로그 입니다.",
   "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "kimji9663 <rlawlgp9663@naver.com>",
   "bugs": {
     "url": "https://github.com/gatsbyjs/gatsby/issues"
   },
