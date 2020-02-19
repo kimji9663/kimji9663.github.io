@@ -1,5 +1,5 @@
 ---
-title: vscode의 유용한 Extention
+title: VScode의 유용한 Extention
 date: "2020-02-14"
 ---
 
