@@ -1,0 +1,79 @@
+h3 {
+    font-family: 'sans-serif'
+}
+p {
+    font-family: 'Arial, sans-serif'
+}
+a {
+    color: #000;
+}
+
+
+
+header#header {
+    $h1FontSize: 4;
+    $padding: 20;
+    @function fontsizeToPx($n) {
+        @return $n * 16;
+    }
+
+    background: #33f58b;
+    padding: $padding + px;
+
+    h1 {
+        margin: 0;
+        line-height: 1;
+        font-size: $h1FontSize + rem;
+    }
+
+    nav {
+        position: absolute;
+        top: 0;
+        right: 0;
+    
+        ul {
+            li {
+                float: left;
+                margin: 0 20px;
+                list-style: none;
+                
+                a {
+                  box-shadow: none;
+                  font-size: $h1FontSize/2.5 + rem;
+                  line-height: (fontsizeToPx($h1FontSize) + $padding * 2) + px;
+                }
+            }
+        }
+    }
+}
+
+
+
+
+main {
+    height: 100vh;
+
+    .topIntro {
+        display: flex;
+        align-items: center;
+        height: 300px;
+        background: #000;
+        color: #fff;
+        font-size: 80px;
+    
+        .inner {
+            display: block;
+            width: 100%;
+            text-align: center;
+        }
+    }
+}
+
+
+#footer {
+    padding: 4rem;
+    background: #f3f3f3;
+    text-align: center;
+}
+
+

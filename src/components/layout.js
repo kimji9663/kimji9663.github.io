@@ -1,6 +1,5 @@
 import React from "react"
 import { Link } from "gatsby"
-
 import { rhythm, scale } from "../utils/typography"
 
 const Layout = ({ location, title, children }) => {
@@ -11,8 +10,8 @@ const Layout = ({ location, title, children }) => {
     header = (
       <h1
         style={{
-          ...scale(1.5),
-          marginBottom: rhythm(1.5),
+          //...scale(1.5),
+          //marginBottom: rhythm(1.5),
           marginTop: 0,
         }}
       >
@@ -50,17 +49,38 @@ const Layout = ({ location, title, children }) => {
     )
   }
   return (
-    <div
-      style={{
-        marginLeft: `auto`,
-        marginRight: `auto`,
-        maxWidth: rhythm(24),
-        padding: `${rhythm(1.5)} ${rhythm(3 / 4)}`,
-      }}
-    >
-      <header>{header}</header>
-      <main>{children}</main>
-      <footer>
+    <div>
+      <header id="header">
+        {header}
+        <nav>
+          <ul>
+            <li>
+              <Link to={`/`}>
+                INTRO
+              </Link>
+            </li>
+            <li>
+              <Link to={`/`}>
+                WORK
+              </Link>
+            </li>
+            <li>
+              <Link to={`/blog/`}>
+                BLOG
+              </Link>
+            </li>
+          </ul>
+        </nav>
+      </header>
+      <main
+        style={{
+          // marginLeft: `auto`,
+          // marginRight: `auto`,
+          // maxWidth: rhythm(24),
+          // padding: `${rhythm(1.5)} ${rhythm(3 / 4)}`,
+        }}
+      >{children}</main>
+      <footer id="footer">
         © {new Date().getFullYear()}, Built with
         {` `}
         <a href="https://www.gatsbyjs.org">Gatsby</a>
