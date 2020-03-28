@@ -4,6 +4,7 @@ const Intro = () => {
     return (
         <Fragment>
             <div className="topIntro">
+                <div className="colorBg"></div>
                 <div className="inner">
                     INTRO
                 </div>
