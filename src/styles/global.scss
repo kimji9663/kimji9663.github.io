@@ -17,6 +17,10 @@ header#header {
         @return $n * 16;
     }
 
+    position: fixed;
+    top: 0;
+    z-index: 10;
+    width: 100%;
     background: #33f58b;
     padding: $padding + px;
 
@@ -48,15 +52,11 @@ header#header {
 }
 
 main {
-    height: 100vh;
     background-image: url(../images/background.gif);
     background-attachment: fixed;
 
     .topIntro {
-        display: flex;
-        align-items: center;
         height: 80vh;
-        background: #000;
         color: #fff;
         font-size: 80px;
         clip-path: polygon(0 0, 100% 0, 100% 100%, 0 90%);
@@ -65,11 +65,29 @@ main {
             display: block;
             width: 100%;
             text-align: center;
+            background: url(../images/home2-1600x865.jpg);
+            background-attachment: fixed;
+            background-size: cover;
+
+            .trigger {
+                height: 0;
+                // background-color: #fff;
+                // font-size: 20px;
+                // color: #000;
+            }
+
+            .mainText {
+                width: 100%;
+                height: auto;
+                position: relative;
+                top: 0;
+            }
         }
     }
 
     .work {
         position: relative;
+        height: 100vh;
 
         .inner {
             #bird {

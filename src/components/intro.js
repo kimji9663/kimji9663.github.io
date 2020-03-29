@@ -1,12 +1,14 @@
 import React, {Fragment} from 'react';
+import TweenComponent from './TweenComponent';
 
 const Intro = () => {
+
     return (
         <Fragment>
             <div className="topIntro">
                 <div className="colorBg"></div>
                 <div className="inner">
-                    INTRO
+                    <TweenComponent></TweenComponent>
                 </div>
             </div>
             <div className="work">
