@@ -24,10 +24,14 @@ header#header {
     background: #33f58b;
     padding: $padding + px;
 
-    h1 {
+    .mainTitle {
         margin: 0;
         line-height: 1;
         font-size: $h1FontSize + rem;
+    }
+    .subTitle {
+        font-family: Montserrat, sans-serif;
+        margin-top: 0;
     }
 
     nav {
@@ -52,9 +56,6 @@ header#header {
 }
 
 main {
-    background-image: url(../images/background.gif);
-    background-attachment: fixed;
-
     .topIntro {
         height: 80vh;
         color: #fff;
@@ -113,8 +114,13 @@ main {
         }
     }
 }
-
-
+.mainBg {
+    background-image: url(../images/background.gif);
+    background-attachment: fixed;
+}
+.subBg {
+    background: #fff;
+}
 #footer {
     padding: 4rem;
     background: #f3f3f3;

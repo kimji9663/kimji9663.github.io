@@ -19,10 +19,15 @@ header#header {
   padding: 20px;
 }
 
-header#header h1 {
+header#header .mainTitle {
   margin: 0;
   line-height: 1;
   font-size: 4rem;
+}
+
+header#header .subTitle {
+  font-family: Montserrat, sans-serif;
+  margin-top: 0;
 }
 
 header#header nav {
@@ -42,11 +47,6 @@ header#header nav ul li a {
           box-shadow: none;
   font-size: 1.6rem;
   line-height: 104px;
-}
-
-main {
-  background-image: url(../images/background.gif);
-  background-attachment: fixed;
 }
 
 main .topIntro {
@@ -102,6 +102,15 @@ main .work .inner #bird .svg {
   right: 0;
   bottom: 0;
   left: 0;
+}
+
+.mainBg {
+  background-image: url(../images/background.gif);
+  background-attachment: fixed;
+}
+
+.subBg {
+  background: #fff;
 }
 
 #footer {

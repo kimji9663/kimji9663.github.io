@@ -1,4 +1,6 @@
 import React, {Fragment} from 'react';
+import Bio from "../components/bio"
+import SEO from "../components/seo"
 import { Controller, Scene } from 'react-scrollmagic';
 import { Tween, Timeline } from 'react-gsap';
 
@@ -31,7 +33,10 @@ const TweenComponent = () => {
                         totalProgress={progress}
                         paused
                       >
-                            <div className="mainText">INTRO</div>
+                            <div className="mainText">
+                                <Bio></Bio>
+                                <SEO></SEO>
+                            </div>
                         </Tween>
                     )}
                 </Scene>

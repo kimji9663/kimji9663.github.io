@@ -8,15 +8,14 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import Image from "gatsby-image"
-
-import { rhythm } from "../utils/typography"
+// import { rhythm } from "../utils/typography"
 
 const Bio = () => {
   const data = useStaticQuery(graphql`
     query BioQuery {
       avatar: file(absolutePath: { regex: "/logo-jihye.jpg/" }) {
         childImageSharp {
-          fixed(width: 50, height: 50) {
+          fixed(width: 100, height: 100) {
             ...GatsbyImageSharpFixed
           }
         }
@@ -34,29 +33,28 @@ const Bio = () => {
 
   const { author, social } = data.site.siteMetadata
   return (
-    <div
-      style={{
-        display: `flex`,
-        marginBottom: rhythm(2.5),
-      }}
-    >
+    <div>
       <Image
         fixed={data.avatar.childImageSharp.fixed}
         alt={author}
         style={{
-          marginRight: rhythm(1 / 2),
-          marginBottom: 0,
-          minWidth: 50,
-          borderRadius: `100%`,
+          margin: `auto`,
+          minWidth: 100,
+          borderRadius: `50%`,
         }}
         imgStyle={{
           borderRadius: `50%`,
         }}
       />
-      <p>
-        <strong>{author}</strong>의 공부하고 기록하는 블로그 입니다. <br></br>
+      <p style={{
+        lineHeight: `1.2`,
+      }}>
+        <strong>{author}</strong>의<br/> 공부하고 기록하는<br/> 블로그 입니다. <br></br>
         {` `}
-        <a href={`https://www.facebook.com/${social.facebook}`}>
+        <a style={{
+          fontSize: `25px`,
+        }} 
+          href={`https://www.facebook.com/${social.facebook}`}>
           페이스북
         </a>
       </p>

@@ -1,11 +1,11 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
 
-import Bio from "../components/bio"
+// import Bio from "../components/bio"
+// import SEO from "../components/seo"
 import Layout from "../components/layout"
 import Intro from "../components/intro"
-import SEO from "../components/seo"
-import { rhythm } from "../utils/typography"
+// import { rhythm } from "../utils/typography"
 
 const BlogIndex = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata.title
@@ -14,7 +14,6 @@ const BlogIndex = ({ data, location }) => {
   return (
     <Layout location={location} title={siteTitle}>
       <Intro />
-      <SEO title="Intro" />
     </Layout>
   )
 }
