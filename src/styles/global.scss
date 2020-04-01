@@ -1,3 +1,5 @@
+@import './breakpoint.scss';
+
 h3 {
     font-family: 'sans-serif'
 }
@@ -10,7 +12,7 @@ a {
 
 
 
-header#header {
+#header {
     $h1FontSize: 4;
     $padding: 20;
     @function fontsizeToPx($n) {
@@ -27,7 +29,11 @@ header#header {
     .mainTitle {
         margin: 0;
         line-height: 1;
-        font-size: $h1FontSize + rem;
+        font-size: $h1FontSize/2 + rem;
+
+        @include breakpoint('desktop'){
+            font-size: $h1FontSize + rem;
+        }
     }
     .subTitle {
         font-family: Montserrat, sans-serif;
@@ -38,17 +44,31 @@ header#header {
         position: absolute;
         top: 0;
         right: 0;
+        display: none;
+                            
+        @include breakpoint('ftablet'){
+            display: block;
+        }
     
         ul {
             li {
                 float: left;
-                margin: 0 20px;
+                margin: 0 10px;
                 list-style: none;
+
+                @include breakpoint('desktop'){
+                    margin: 0 20px;
+                }
                 
                 a {
-                  box-shadow: none;
-                  font-size: $h1FontSize/2.5 + rem;
-                  line-height: (fontsizeToPx($h1FontSize) + $padding * 2) + px;
+                    box-shadow: none;
+                    font-size: $h1FontSize/2/2.5 + rem;
+                    line-height: (fontsizeToPx($h1FontSize/2) + $padding * 2) + px;
+
+                    @include breakpoint('desktop'){
+                        font-size: $h1FontSize/2.5 + rem;
+                        line-height: (fontsizeToPx($h1FontSize) + $padding * 2) + px;
+                    }
                 }
             }
         }
@@ -59,16 +79,22 @@ main {
     .topIntro {
         height: 80vh;
         color: #fff;
-        font-size: 80px;
         clip-path: polygon(0 0, 100% 0, 100% 100%, 0 90%);
     
         .inner {
             display: block;
             width: 100%;
             text-align: center;
-            background: url(../images/home2-1600x865.jpg);
-            background-attachment: fixed;
+            background-image: url(../images/home2-1600x865.jpg);
             background-size: cover;
+            background-position: 50%;
+            background-repeat: no-repeat;
+            // transform: scale(1.2);
+            // transition: all 1s cubic-bezier(.7,0,.3,1);
+
+            .section {
+                height: 50vh;
+            }
 
             .trigger {
                 height: 0;
@@ -77,11 +103,44 @@ main {
                 // color: #000;
             }
 
+            .authorImg {
+                position: relative;
+                top: -400px;
+                // display: none;
+                margin: auto;
+                width: 100px;
+                height: 100px;
+
+                @include breakpoint('desktop') {
+                    display: block;
+                }
+
+                .gatsby-image-wrapper {
+                    width: 60px;
+                    height: 60px;
+                    border-radius: 50%;
+                }
+
+                @include breakpoint('desktop') {
+                    width: 100px;
+                    height: 100px;
+                }
+            }
+
             .mainText {
-                width: 100%;
-                height: auto;
                 position: relative;
                 top: 0;
+                width: 90%;
+                margin: auto;
+                text-align: center;
+
+                @include breakpoint('mobile'){
+                    font-size: 40px;
+                }
+
+                @include breakpoint('tablet'){
+                    font-size: 80px;
+                }
             }
         }
     }
@@ -94,7 +153,7 @@ main {
             #bird {
                 position: absolute;
                 width: 25%;
-                transform: translateY(-80%);
+                transform: translateY(-90%);
 
                 div {
                     padding-top: 66%;
@@ -126,5 +185,3 @@ main {
     background: #f3f3f3;
     text-align: center;
 }
-
-

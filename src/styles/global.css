@@ -10,7 +10,7 @@ a {
   color: #000;
 }
 
-header#header {
+#header {
   position: fixed;
   top: 0;
   z-index: 10;
@@ -19,40 +19,65 @@ header#header {
   padding: 20px;
 }
 
-header#header .mainTitle {
+#header .mainTitle {
   margin: 0;
   line-height: 1;
-  font-size: 4rem;
+  font-size: 2rem;
 }
 
-header#header .subTitle {
+@media (min-width: 1049px) {
+  #header .mainTitle {
+    font-size: 4rem;
+  }
+}
+
+#header .subTitle {
   font-family: Montserrat, sans-serif;
   margin-top: 0;
 }
 
-header#header nav {
+#header nav {
   position: absolute;
   top: 0;
   right: 0;
+  display: none;
 }
 
-header#header nav ul li {
+@media (min-width: 480px) {
+  #header nav {
+    display: block;
+  }
+}
+
+#header nav ul li {
   float: left;
-  margin: 0 20px;
+  margin: 0 10px;
   list-style: none;
 }
 
-header#header nav ul li a {
+@media (min-width: 1049px) {
+  #header nav ul li {
+    margin: 0 20px;
+  }
+}
+
+#header nav ul li a {
   -webkit-box-shadow: none;
           box-shadow: none;
-  font-size: 1.6rem;
-  line-height: 104px;
+  font-size: 0.8rem;
+  line-height: 72px;
+}
+
+@media (min-width: 1049px) {
+  #header nav ul li a {
+    font-size: 1.6rem;
+    line-height: 104px;
+  }
 }
 
 main .topIntro {
   height: 80vh;
   color: #fff;
-  font-size: 80px;
   -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 90%);
           clip-path: polygon(0 0, 100% 0, 100% 100%, 0 90%);
 }
@@ -61,20 +86,65 @@ main .topIntro .inner {
   display: block;
   width: 100%;
   text-align: center;
-  background: url(../images/home2-1600x865.jpg);
-  background-attachment: fixed;
+  background-image: url(../images/home2-1600x865.jpg);
   background-size: cover;
+  background-position: 50%;
+  background-repeat: no-repeat;
+}
+
+main .topIntro .inner .section {
+  height: 50vh;
 }
 
 main .topIntro .inner .trigger {
   height: 0;
 }
 
+main .topIntro .inner .authorImg {
+  position: relative;
+  top: -400px;
+  margin: auto;
+  width: 100px;
+  height: 100px;
+}
+
+@media (min-width: 1049px) {
+  main .topIntro .inner .authorImg {
+    display: block;
+  }
+}
+
+main .topIntro .inner .authorImg .gatsby-image-wrapper {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+}
+
+@media (min-width: 1049px) {
+  main .topIntro .inner .authorImg {
+    width: 100px;
+    height: 100px;
+  }
+}
+
 main .topIntro .inner .mainText {
-  width: 100%;
-  height: auto;
   position: relative;
   top: 0;
+  width: 90%;
+  margin: auto;
+  text-align: center;
+}
+
+@media (min-width: 340px) {
+  main .topIntro .inner .mainText {
+    font-size: 40px;
+  }
+}
+
+@media (min-width: 778px) {
+  main .topIntro .inner .mainText {
+    font-size: 80px;
+  }
 }
 
 main .work {
@@ -85,8 +155,8 @@ main .work {
 main .work .inner #bird {
   position: absolute;
   width: 25%;
-  -webkit-transform: translateY(-80%);
-          transform: translateY(-80%);
+  -webkit-transform: translateY(-90%);
+          transform: translateY(-90%);
 }
 
 main .work .inner #bird div {
