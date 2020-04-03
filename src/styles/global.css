@@ -76,15 +76,23 @@ a {
 }
 
 main .topIntro {
-  height: 80vh;
+  height: 50vh;
   color: #fff;
   -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 90%);
           clip-path: polygon(0 0, 100% 0, 100% 100%, 0 90%);
 }
 
+@media (min-width: 778px) {
+  main .topIntro {
+    height: 80vh;
+  }
+}
+
 main .topIntro .inner {
+  position: relative;
   display: block;
   width: 100%;
+  height: 100%;
   text-align: center;
   background-image: url(../images/home2-1600x865.jpg);
   background-size: cover;
@@ -100,31 +108,13 @@ main .topIntro .inner .trigger {
   height: 0;
 }
 
-main .topIntro .inner .authorImg {
-  position: relative;
-  top: -400px;
-  margin: auto;
-  width: 100px;
-  height: 100px;
-}
-
-@media (min-width: 1049px) {
-  main .topIntro .inner .authorImg {
-    display: block;
-  }
-}
-
-main .topIntro .inner .authorImg .gatsby-image-wrapper {
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-}
-
-@media (min-width: 1049px) {
-  main .topIntro .inner .authorImg {
-    width: 100px;
-    height: 100px;
-  }
+main .topIntro .inner .colorBg {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: #33f58b;
 }
 
 main .topIntro .inner .mainText {
@@ -132,13 +122,9 @@ main .topIntro .inner .mainText {
   top: 0;
   width: 90%;
   margin: auto;
+  font-size: 40px;
   text-align: center;
-}
-
-@media (min-width: 340px) {
-  main .topIntro .inner .mainText {
-    font-size: 40px;
-  }
+  line-height: 1.2;
 }
 
 @media (min-width: 778px) {
@@ -155,8 +141,15 @@ main .work {
 main .work .inner #bird {
   position: absolute;
   width: 25%;
+  display: none;
   -webkit-transform: translateY(-90%);
           transform: translateY(-90%);
+}
+
+@media (min-width: 778px) {
+  main .work .inner #bird {
+    display: block;
+  }
 }
 
 main .work .inner #bird div {
