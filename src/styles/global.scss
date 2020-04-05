@@ -91,7 +91,8 @@ main {
             width: 100%;
             height: 100%;
             text-align: center;
-            background-image: url(../images/home2-1600x865.jpg);
+            // background-image: url(../images/home2-1600x865.jpg);
+            background-color: black;
             background-size: cover;
             background-position: 50%;
             background-repeat: no-repeat;
@@ -104,9 +105,6 @@ main {
 
             .trigger {
                 height: 0;
-                // background-color: #fff;
-                // font-size: 20px;
-                // color: #000;
             }
 
             .colorBg {
@@ -123,12 +121,68 @@ main {
                 top: 0;
                 width: 90%;
                 margin: auto;
-                font-size: 40px;
-                text-align: center;
-                line-height: 1.2;
+                text-align: left;
+                line-height: 1.5;
 
-                @include breakpoint('tablet'){
-                    font-size: 80px;
+                h2 {
+                    margin: 50px 0 0 10%;
+                    font-size: 30px;
+    
+                    @include breakpoint('tablet'){
+                        font-size: 60px;
+                        margin: 120px 0 0 40px;
+                    }
+
+                    @include breakpoint('desktop'){
+                        font-size: 80px;
+                        margin: 150px 0 0 80px;
+                    }
+                }
+
+                .shape {
+                    position: absolute;
+                    top: -50px;
+                    z-index: 2;
+                    width: 140px;
+                    height: 140px;
+                    border-radius: 36% 64% 63% 37%/54% 60% 44% 48%;
+                    overflow: hidden;
+                    background-color: #33f58b;
+                    white-space: nowrap;
+                    animation: 3s linear infinite slime;
+
+                    @include breakpoint('tablet'){
+                        top: -120px;
+                        width: 300px;
+                        height: 300px;
+                    }
+
+                    @include breakpoint('desktop'){
+                        top: -150px;
+                        width: 400px;
+                        height: 400px;
+                    }
+
+                    span {
+                        color: #fbff00;
+                    }
+                }
+
+                @keyframes slime {
+                    0% {border-radius: 36% 64% 63% 37%/54% 60% 44% 48%}
+                    25% {border-radius: 73% 35% 55% 60%/65% 44% 62% 56%}
+                    50% {border-radius: 75% 35% 35% 72%/58% 51% 56% 49%}
+                    75% {border-radius: 71% 52% 69% 31%/69% 52% 79% 58%}
+                    100% {border-radius: 36% 64% 63% 37%/54% 60% 44% 48%}
+                }
+
+                .base {
+                    position: relative;
+                    z-index: 1;
+                    
+                    span {
+                        color: #fff
+                    }
                 }
             }
         }

@@ -94,7 +94,7 @@ main .topIntro .inner {
   width: 100%;
   height: 100%;
   text-align: center;
-  background-image: url(../images/home2-1600x865.jpg);
+  background-color: black;
   background-size: cover;
   background-position: 50%;
   background-repeat: no-repeat;
@@ -122,15 +122,106 @@ main .topIntro .inner .mainText {
   top: 0;
   width: 90%;
   margin: auto;
-  font-size: 40px;
-  text-align: center;
-  line-height: 1.2;
+  text-align: left;
+  line-height: 1.5;
+}
+
+main .topIntro .inner .mainText h2 {
+  margin: 50px 0 0 10%;
+  font-size: 30px;
 }
 
 @media (min-width: 778px) {
-  main .topIntro .inner .mainText {
-    font-size: 80px;
+  main .topIntro .inner .mainText h2 {
+    font-size: 60px;
+    margin: 120px 0 0 40px;
   }
+}
+
+@media (min-width: 1049px) {
+  main .topIntro .inner .mainText h2 {
+    font-size: 80px;
+    margin: 150px 0 0 80px;
+  }
+}
+
+main .topIntro .inner .mainText .shape {
+  position: absolute;
+  top: -50px;
+  z-index: 2;
+  width: 140px;
+  height: 140px;
+  border-radius: 36% 64% 63% 37%/54% 60% 44% 48%;
+  overflow: hidden;
+  background-color: #33f58b;
+  white-space: nowrap;
+  -webkit-animation: 3s linear infinite slime;
+          animation: 3s linear infinite slime;
+}
+
+@media (min-width: 778px) {
+  main .topIntro .inner .mainText .shape {
+    top: -120px;
+    width: 300px;
+    height: 300px;
+  }
+}
+
+@media (min-width: 1049px) {
+  main .topIntro .inner .mainText .shape {
+    top: -150px;
+    width: 400px;
+    height: 400px;
+  }
+}
+
+main .topIntro .inner .mainText .shape span {
+  color: #fbff00;
+}
+
+@-webkit-keyframes slime {
+  0% {
+    border-radius: 36% 64% 63% 37%/54% 60% 44% 48%;
+  }
+  25% {
+    border-radius: 73% 35% 55% 60%/65% 44% 62% 56%;
+  }
+  50% {
+    border-radius: 75% 35% 35% 72%/58% 51% 56% 49%;
+  }
+  75% {
+    border-radius: 71% 52% 69% 31%/69% 52% 79% 58%;
+  }
+  100% {
+    border-radius: 36% 64% 63% 37%/54% 60% 44% 48%;
+  }
+}
+
+@keyframes slime {
+  0% {
+    border-radius: 36% 64% 63% 37%/54% 60% 44% 48%;
+  }
+  25% {
+    border-radius: 73% 35% 55% 60%/65% 44% 62% 56%;
+  }
+  50% {
+    border-radius: 75% 35% 35% 72%/58% 51% 56% 49%;
+  }
+  75% {
+    border-radius: 71% 52% 69% 31%/69% 52% 79% 58%;
+  }
+  100% {
+    border-radius: 36% 64% 63% 37%/54% 60% 44% 48%;
+  }
+}
+
+main .topIntro .inner .mainText .base {
+  position: relative;
+  z-index: 1;
+}
+
+main .topIntro .inner .mainText .base span {
+  color: #fff;
 }
 
 main .work {
