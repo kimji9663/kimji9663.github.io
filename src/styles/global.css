@@ -75,6 +75,17 @@ a {
   }
 }
 
+main.mainBg {
+  background-color: #3c3e3d;
+  background-image: url(../images/bg-grid01.png);
+  background-size: 35px auto;
+  background-attachment: fixed;
+}
+
+main.subBg {
+  background: #fff;
+}
+
 main .topIntro {
   height: 50vh;
   color: #fff;
@@ -120,6 +131,7 @@ main .topIntro .inner .colorBg {
 main .topIntro .inner .mainText {
   position: relative;
   top: 0;
+  max-width: 1300px;
   width: 90%;
   margin: auto;
   text-align: left;
@@ -141,7 +153,7 @@ main .topIntro .inner .mainText h2 {
 @media (min-width: 1049px) {
   main .topIntro .inner .mainText h2 {
     font-size: 80px;
-    margin: 150px 0 0 80px;
+    margin: 150px 0 0 50px;
   }
 }
 
@@ -226,28 +238,29 @@ main .topIntro .inner .mainText .base span {
 
 main .work {
   position: relative;
-  height: 100vh;
 }
 
-main .work .inner #bird {
+main .work #bird {
   position: absolute;
+  left: 0;
+  max-width: 375px;
   width: 25%;
   display: none;
-  -webkit-transform: translateY(-90%);
-          transform: translateY(-90%);
+  -webkit-transform: translateY(-100%);
+          transform: translateY(-100%);
 }
 
 @media (min-width: 778px) {
-  main .work .inner #bird {
+  main .work #bird {
     display: block;
   }
 }
 
-main .work .inner #bird div {
+main .work #bird div {
   padding-top: 66%;
 }
 
-main .work .inner #bird .svg {
+main .work #bird .svg {
   width: 100%;
   height: 100%;
   overflow: hidden;
@@ -258,18 +271,188 @@ main .work .inner #bird .svg {
   left: 0;
 }
 
-.mainBg {
-  background-image: url(../images/background.gif);
-  background-attachment: fixed;
+main .work .inner {
+  width: 90%;
+  max-width: 1300px;
+  margin: auto;
 }
 
-.subBg {
-  background: #fff;
+@media (min-width: 1049px) {
+  main .work .inner {
+    padding-top: 50px;
+  }
+}
+
+main .work .inner h2 {
+  color: #fff;
+  font-size: 40px;
+  text-align: center;
+}
+
+@media (min-width: 778px) {
+  main .work .inner h2 {
+    text-align: right;
+    font-size: 50px;
+  }
+}
+
+@media (min-width: 1049px) {
+  main .work .inner h2 {
+    font-size: 80px;
+  }
+}
+
+main .work .inner .projectList ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 0;
+}
+
+@media (min-width: 778px) {
+  main .work .inner .projectList ul {
+    -ms-flex-item-align: start;
+        align-self: flex-start;
+  }
+}
+
+main .work .inner .projectList ul li {
+  position: relative;
+  list-style: none;
+}
+
+@media (min-width: 778px) {
+  main .work .inner .projectList ul li:nth-child(odd) {
+    -ms-flex-item-align: start;
+        align-self: flex-start;
+  }
+}
+
+main .work .inner .projectList ul li:nth-child(odd) .conerDecoration {
+  top: 109px;
+  left: 0;
+}
+
+@media (min-width: 778px) {
+  main .work .inner .projectList ul li:nth-child(even) {
+    -ms-flex-item-align: end;
+        align-self: flex-end;
+    text-align: right;
+  }
+}
+
+main .work .inner .projectList ul li:nth-child(even) .conerDecoration {
+  top: 109px;
+  right: 0;
+}
+
+main .work .inner .projectList ul li h3 {
+  color: #fff;
+}
+
+main .work .inner .projectList ul li .conerDecoration {
+  position: absolute;
+  background-color: #fff;
+}
+
+main .work .inner .projectList ul li .conerDecoration:nth-of-type(1) {
+  width: 50px;
+  height: 15px;
+}
+
+main .work .inner .projectList ul li .conerDecoration:nth-of-type(2) {
+  width: 15px;
+  height: 40px;
+}
+
+main .work .inner .projectList ul li .imgWrap {
+  width: 300px;
+  height: 200px;
+  overflow: hidden;
+  -webkit-transition: .5s ease-out all;
+  transition: .5s ease-out all;
+}
+
+@media (min-width: 778px) {
+  main .work .inner .projectList ul li .imgWrap {
+    width: 400px;
+    height: 266px;
+  }
+}
+
+@media (min-width: 1049px) {
+  main .work .inner .projectList ul li .imgWrap {
+    width: 600px;
+    height: 400px;
+  }
+  main .work .inner .projectList ul li .imgWrap:hover {
+    -webkit-transform: scale(0.9);
+            transform: scale(0.9);
+  }
+  main .work .inner .projectList ul li .imgWrap:hover figure {
+    top: 50px;
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+  }
+}
+
+main .work .inner .projectList ul li .imgWrap figure {
+  position: relative;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+
+main .work .inner .projectList ul li .imgWrap .projectImg01 {
+  background-image: url(../images/home2-1600x865.jpg);
+  background-size: cover;
+  -webkit-transition: 1s ease all;
+  transition: 1s ease all;
+}
+
+main .work .inner .projectList ul li .imgWrap .projectImg02 {
+  background-image: url(../images/home2-1600x865.jpg);
+  background-size: cover;
+  -webkit-transition: 1s ease all;
+  transition: 1s ease all;
+}
+
+main .work .inner .projectList ul li .imgWrap .projectImg03 {
+  background-image: url(../images/home2-1600x865.jpg);
+  background-size: cover;
+  -webkit-transition: 1s ease all;
+  transition: 1s ease all;
+}
+
+main .work .inner .projectList ul li .imgWrap .projectImg04 {
+  background-image: url(../images/home2-1600x865.jpg);
+  background-size: cover;
+  -webkit-transition: 1s ease all;
+  transition: 1s ease all;
 }
 
 #footer {
-  padding: 4rem;
+  padding: 32px;
   background: #f3f3f3;
   text-align: center;
+}
+
+@media (min-width: 778px) {
+  #footer {
+    padding: 43px;
+  }
+}
+
+@media (min-width: 1049px) {
+  #footer {
+    padding: 64px;
+  }
 }
 /*# sourceMappingURL=global.css.map */

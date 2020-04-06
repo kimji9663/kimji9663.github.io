@@ -76,6 +76,19 @@ a {
 }
 
 main {
+    &.mainBg {
+        background: {
+            color: #3c3e3d;
+            image: url(../images/bg-grid01.png);
+            size: 35px auto;
+            attachment: fixed;
+        }
+    }
+
+    &.subBg {
+        background: #fff;
+    }
+
     .topIntro {
         height: 50vh;
         color: #fff;
@@ -119,6 +132,7 @@ main {
             .mainText {
                 position: relative;
                 top: 0;
+                max-width: 1300px;
                 width: 90%;
                 margin: auto;
                 text-align: left;
@@ -135,7 +149,7 @@ main {
 
                     @include breakpoint('desktop'){
                         font-size: 80px;
-                        margin: 150px 0 0 80px;
+                        margin: 150px 0 0 50px;
                     }
                 }
 
@@ -190,46 +204,198 @@ main {
 
     .work {
         position: relative;
-        height: 100vh;
+
+        #bird {
+            position: absolute;
+            left: 0;
+            max-width: 375px;
+            width: 25%;
+            display: none;
+            transform: translateY(-100%);
+
+            @include breakpoint('tablet'){
+                display: block;
+            }
+
+            div {
+                padding-top: 66%;
+            }
+
+            .svg {
+                width: 100%;
+                height: 100%;
+                overflow: hidden;
+                position: absolute;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 0;
+            }
+        }
 
         .inner {
-            #bird {
-                position: absolute;
-                width: 25%;
-                display: none;
-                transform: translateY(-90%);
+            width: 90%;
+            max-width: 1300px;
+            margin: auto;
 
-                @include breakpoint('tablet'){
-                    display: block;
+            @include breakpoint('desktop'){
+                padding-top: 50px;
+            }
+    
+            h2 {
+                color: #fff;
+                font-size: 40px;
+                text-align: center;
+
+                @include breakpoint('tablet') {
+                    text-align: right;
+                    font-size: 50px;
                 }
 
-                div {
-                    padding-top: 66%;
+                @include breakpoint('desktop') {
+                    font-size: 80px;
                 }
+            }
+            
+            .projectList {
+                ul {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    margin: 0;
+    
+                    @include breakpoint('tablet'){
+                        align-self: flex-start;
+                    }
 
-                .svg {
-                    width: 100%;
-                    height: 100%;
-                    overflow: hidden;
-                    position: absolute;
-                    top: 0;
-                    right: 0;
-                    bottom: 0;
-                    left: 0;
+                    li {
+                        position: relative;
+                        list-style: none;
+
+                        &:nth-child(odd) {
+    
+                            @include breakpoint('tablet'){
+                                align-self: flex-start;
+                            }
+    
+                            .conerDecoration {
+                                top: 109px;
+                                left: 0;
+                            }
+                        }
+    
+                        &:nth-child(even) {
+    
+                            @include breakpoint('tablet'){
+                                align-self: flex-end;
+                                text-align: right;
+                            }
+
+                            .conerDecoration {
+                                top: 109px;
+                                right: 0;
+                            }
+                        }
+
+                        h3 {
+                            color: #fff;
+                        }
+    
+                        .conerDecoration {
+                            position: absolute;
+                            background-color: #fff;
+                            
+                            &:nth-of-type(1) {
+                                width: 50px;
+                                height: 15px;
+                            }
+
+                            &:nth-of-type(2) {
+                                width: 15px;
+                                height: 40px;
+                            }    
+                        }
+    
+                        .imgWrap {
+                            width: 300px;
+                            height: 200px;
+                            overflow: hidden;
+                            transition: .5s ease-out all;
+
+                            @include breakpoint('tablet'){
+                                width: 400px;
+                                height: 266px;
+                            }
+
+                            @include breakpoint('desktop'){
+                                width: 600px;
+                                height: 400px;
+
+                                &:hover {
+                                    transform: scale(0.9);
+    
+                                    figure {
+                                        top: 50px;
+                                        transform: scale(1.2);
+                                    }
+                                }
+                            }
+
+                            figure {
+                                position: relative;
+                                top:0;
+                                width: 100%;
+                                height: 100%;
+                            }
+        
+                            .projectImg01 {
+                                background: {
+                                    image: url(../images/home2-1600x865.jpg);
+                                    size: cover;
+                                }
+                                transition: 1s ease all;
+                            }
+    
+                            .projectImg02 {
+                                background: {
+                                    image: url(../images/home2-1600x865.jpg);
+                                    size: cover;
+                                }
+                                transition: 1s ease all;
+                            }
+    
+                            .projectImg03 {
+                                background: {
+                                    image: url(../images/home2-1600x865.jpg);
+                                    size: cover;
+                                }
+                                transition: 1s ease all;
+                            }
+    
+                            .projectImg04 {
+                                background: {
+                                    image: url(../images/home2-1600x865.jpg);
+                                    size: cover;
+                                }
+                                transition: 1s ease all;
+                            }
+                        }
+                    }
                 }
             }
         }
     }
 }
-.mainBg {
-    background-image: url(../images/background.gif);
-    background-attachment: fixed;
-}
-.subBg {
-    background: #fff;
-}
 #footer {
-    padding: 4rem;
+    padding: 32px;
     background: #f3f3f3;
     text-align: center;
+
+    @include breakpoint('tablet'){
+        padding: 43px;
+    }
+
+    @include breakpoint('desktop'){
+        padding: 64px;
+    }
 }
