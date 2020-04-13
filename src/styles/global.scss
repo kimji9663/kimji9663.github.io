@@ -4,6 +4,7 @@ h3 {
     font-family: 'sans-serif'
 }
 p {
+    margin-bottom: 1.5rem;
     font-family: 'Arial, sans-serif'
 }
 a {
@@ -11,9 +12,65 @@ a {
 }
 
 
+/* CODE STYLE */
+.gatsby-highlight {
+    position: relative;
 
+    pre {
+
+        &[class*="language-"] {
+            padding: 1.5rem 0px;
+    
+            &::before {
+                color: #232129;
+                font-size: 0.75rem;
+                font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+                letter-spacing: 0.075em;
+                line-height: 1;
+                position: absolute;
+                left: 1.5rem;
+                text-align: right;
+                text-transform: uppercase;
+                top: 0px;
+                border-radius: 0px 0px 4px 4px;
+                padding: 0.25rem 0.5rem;
+            }
+        }
+        
+        &[class="language-css"]::before {
+            content: "css";
+            color: #ffffff;
+            background: rgb(255, 152, 0);
+        }
+        &[class="language-scss"]::before {
+            content: "scss";
+            color: #ffffff;
+            background: rgb(247, 84, 166);
+        }
+        &[class="language-javascript"]::before {
+            content: "js";
+            background: rgb(247, 223, 30);
+        }
+        &[class="language-jsx"]::before {
+            content: "jsx";
+            background: rgb(97, 218, 251);
+        }
+
+        code {
+            display: block;
+            font-size: 100%;
+            line-height: 1.5;
+            float: left;
+            min-width: 100%;
+            padding: 0px 1.5rem;
+        }
+    }
+}
+
+/* LAYOUT */
 #header {
     $h1FontSize: 4;
+    $h3FontSize: 1.5;
     $padding: 20;
     @function fontsizeToPx($n) {
         @return $n * 16;
@@ -31,13 +88,41 @@ a {
         line-height: 1;
         font-size: $h1FontSize/2 + rem;
 
+        & ~ nav ul li a {
+            box-shadow: none;
+            font-size: $h1FontSize/2/2.5 + rem;
+            line-height: (fontsizeToPx($h1FontSize/2) + $padding * 2) + px;
+
+            @include breakpoint('desktop'){
+                font-size: $h1FontSize/2.5 + rem;
+                line-height: (fontsizeToPx($h1FontSize) + $padding * 2) + px;
+            }
+        }
+
         @include breakpoint('desktop'){
             font-size: $h1FontSize + rem;
         }
     }
     .subTitle {
-        font-family: Montserrat, sans-serif;
-        margin-top: 0;
+        margin: 0;
+        line-height: 1;
+        font-size: $h3FontSize/2 + rem;
+        // font-family: Montserrat, sans-serif;
+
+        & ~ nav ul li a {
+            box-shadow: none;
+            font-size: $h1FontSize/2/2.5 + rem;
+            line-height: (fontsizeToPx($h3FontSize/2) + $padding * 2) + px;
+
+            @include breakpoint('desktop'){
+                font-size: $h1FontSize/2.5 + rem;
+                line-height: (fontsizeToPx($h3FontSize) + $padding * 2) + px;
+            }
+        }
+
+        @include breakpoint('desktop'){
+            font-size: $h3FontSize + rem;
+        }
     }
 
     nav {
@@ -59,24 +144,15 @@ a {
                 @include breakpoint('desktop'){
                     margin: 0 20px;
                 }
-                
-                a {
-                    box-shadow: none;
-                    font-size: $h1FontSize/2/2.5 + rem;
-                    line-height: (fontsizeToPx($h1FontSize/2) + $padding * 2) + px;
-
-                    @include breakpoint('desktop'){
-                        font-size: $h1FontSize/2.5 + rem;
-                        line-height: (fontsizeToPx($h1FontSize) + $padding * 2) + px;
-                    }
-                }
             }
         }
     }
 }
 
 main {
+
     &.mainBg {
+        margin-top: 104px;
         background: {
             color: #3c3e3d;
             image: url(../images/bg-grid01.png);
@@ -86,6 +162,11 @@ main {
     }
 
     &.subBg {
+        margin-top: 64px;
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 42rem;
+        padding: 2.625rem 1.3125rem;
         background: #fff;
     }
 

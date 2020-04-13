@@ -21,8 +21,7 @@ SCSS문법으로 작성하고 이를 웹에서 동작 가능한 표준 CSS로 �
 ### 중첩(Nesting)
 선택자의 구문 ```{}``` 안에 하위 선택자의 구문을 중첩하여 넣는다.
 
-- CSS
-```
+```css
 .section {
   width: 100%;
 }
@@ -34,8 +33,7 @@ SCSS문법으로 작성하고 이를 웹에서 동작 가능한 표준 CSS로 �
 }
 ```
 
-- SCSS
-```
+```scss
 .section {
   width: 100%;
   .list {
@@ -51,19 +49,16 @@ SCSS문법으로 작성하고 이를 웹에서 동작 가능한 표준 CSS로 �
 동일한 위치의 선택자의 전체 또는 일부를 참조할 수 있다.
 중첩 안에서 ```&```를 앞에 넣으면 상위 선택자가 ```&```의 자리에 치환된다.
 
-- CSS
-```
+```css
 .btn {
   position: absolute;
 }
 .btn.active {
   color: red;
 }
-
 .list li:last-child {
   margin-right: 0;
 }
-
 .fs-small {
   font-size: 12px;
 }
@@ -75,23 +70,20 @@ SCSS문법으로 작성하고 이를 웹에서 동작 가능한 표준 CSS로 �
 }
 ```
 
-- SCSS
-```
+```scss
 .btn {
   position: absolute;
   &.active {
     color: red;
   }
-}
-
+}    
 .list {
   li {
     &:last-child {
       margin-right: 0;
     }
   }
-}
-
+}    
 .fs {
   &-small { font-size: 12px; }
   &-medium { font-size: 14px; }
@@ -102,8 +94,7 @@ SCSS문법으로 작성하고 이를 웹에서 동작 가능한 표준 CSS로 �
 ### 중첩 벗어나기
 중첩 안에 있지만 상위 선택자의 간섭없이 사용하고자 할 경우 ```@at-root```를 앞에 넣어준다.
 
-- CSS
-```
+```css
 .list li {
   width: 100px;
   height: 50px;
@@ -114,8 +105,7 @@ SCSS문법으로 작성하고 이를 웹에서 동작 가능한 표준 CSS로 �
 }
 ```
 
-- SCSS
-```
+```scss
 .list {
   $w: 100px;
   $h: 50px;
@@ -135,8 +125,7 @@ SCSS문법으로 작성하고 이를 웹에서 동작 가능한 표준 CSS로 �
 ### 속성 중첩
 동일한 네임 스페이스를 가지는 속성들의 중복 코드를 줄이고 관련성을 높인다.
 
-- CSS
-```
+```css
 .box {
   font-weight: bold;
   font-size: 10px;
@@ -148,45 +137,39 @@ SCSS문법으로 작성하고 이를 웹에서 동작 가능한 표준 CSS로 �
 }
 ```
 
-- SCSS
-```
+```scss
 .box {
-    font: {
-        weight: bold;
-        size: 10px;
-        family: sans-serif;
-    };
-    background: {
-        color: #3c3e3d;
-        image: url(../images/bg-grid01.png);
-        size: 35px auto;
-        attachment: fixed;
-    };
-}
+  font: {
+    weight: bold;
+    size: 10px;
+    family: sans-serif;
+  }
+  background: {
+    color: #3c3e3d;
+    image: url(../images/bg-grid01.png);
+    size: 35px auto;
+    attachment: fixed;
+  }
+} 
 ```
 
 ### 변수(Variables)
 빈번하게 사용되는 속성 값에 ```$```를 붙여 변수로 지정한다.
 한번만 지정해놓으면 **하위 구문에서** 자유롭게 불러올 수 있고 재할당도 가능하다.
 
-- CSS
-```
+```css
 .box {
   width: 200px;
   margin-left: 200px;
   background: #e96900 url("/assets/images/bg.jpg");
 }
-//'200px' 속성이 반복적으로 쓰이고 있다.
+/* '200px'속성이 반복적으로 쓰이고 있다. */
 ```
 
-
-- SCSS
-```
+```scss
 $width: 200px; //변수로 선언
 $blue: #0000FF;
-
 $color-primary: $blue; //변수를 재할당
-
 .box {
   width: $width;
   margin-left: $width;
