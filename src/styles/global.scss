@@ -5,7 +5,6 @@ h3 {
 }
 p {
     margin-bottom: 1.5rem;
-    font-family: 'Arial, sans-serif'
 }
 a {
     color: #000;
@@ -69,80 +68,115 @@ a {
 
 /* LAYOUT */
 #header {
-    $h1FontSize: 4;
+    $h1FontSize: 3;
     $h3FontSize: 1.5;
-    $padding: 20;
+    $FontColor: #3d3e3d;
+    $padding: 25;
     @function fontsizeToPx($n) {
         @return $n * 16;
     }
 
-    position: fixed;
+    position: relative;
     top: 0;
-    z-index: 10;
     width: 100%;
-    background: #33f58b;
-    padding: $padding + px;
+    height: 0;
+    background: transparent;
+    padding: ($padding + px) + ' ' + 0;
 
-    .mainTitle {
-        margin: 0;
-        line-height: 1;
-        font-size: $h1FontSize/2 + rem;
-
-        & ~ nav ul li a {
-            box-shadow: none;
-            font-size: $h1FontSize/2/2.5 + rem;
-            line-height: (fontsizeToPx($h1FontSize/2) + $padding * 2) + px;
-
-            @include breakpoint('desktop'){
-                font-size: $h1FontSize/2.5 + rem;
-                line-height: (fontsizeToPx($h1FontSize) + $padding * 2) + px;
-            }
-        }
-
-        @include breakpoint('desktop'){
-            font-size: $h1FontSize + rem;
-        }
+    .sec01 {
+        height: 110vh;
     }
-    .subTitle {
-        margin: 0;
-        line-height: 1;
-        font-size: $h3FontSize/2 + rem;
-        // font-family: Montserrat, sans-serif;
-
-        & ~ nav ul li a {
-            box-shadow: none;
-            font-size: $h1FontSize/2/2.5 + rem;
-            line-height: (fontsizeToPx($h3FontSize/2) + $padding * 2) + px;
-
-            @include breakpoint('desktop'){
-                font-size: $h1FontSize/2.5 + rem;
-                line-height: (fontsizeToPx($h3FontSize) + $padding * 2) + px;
-            }
-        }
-
-        @include breakpoint('desktop'){
-            font-size: $h3FontSize + rem;
-        }
+    .sec02 {
+        height: 50vh;
     }
 
-    nav {
-        position: absolute;
+    .trigger2 {
+        position: relative;
+    }
+
+    .titleWrap {
+        position: fixed;
         top: 0;
-        right: 0;
-        display: none;
-                            
-        @include breakpoint('ftablet'){
-            display: block;
+        z-index: 1;
+        width: 100%;
+        height: ($padding * 2) + px;
+        opacity: 1;
+        border-bottom: 1px solid #000;
+        transition: all .5s cubic-bezier(.7,0,.3,1);
+
+        h1 {
+            margin: 0;
         }
-    
-        ul {
-            li {
-                float: left;
-                margin: 0 10px;
-                list-style: none;
+
+        h1 a {
+            color: $FontColor;
+        }
+
+        .mainTitle {
+            margin: 0;
+            line-height: 1;
+            font-size: $h1FontSize/2 + rem;
+
+            @include breakpoint('desktop'){
+                font-size: $h1FontSize + rem;
+            }
+
+            & ~ nav ul li a {
+                box-shadow: none;
+                font-size: $h1FontSize/2/2.5 + rem;
+                line-height: ($padding * 2) + px;
 
                 @include breakpoint('desktop'){
-                    margin: 0 20px;
+                    font-size: $h1FontSize/2.5 + rem;
+                }
+            }
+        }
+
+        .subTitle {
+            margin: 0;
+            line-height: 1;
+            font-size: $h3FontSize/2 + rem;
+            // font-family: Montserrat, sans-serif;
+
+            & ~ nav ul li a {
+                box-shadow: none;
+                font-size: $h1FontSize/2/2.5 + rem;
+                line-height: (fontsizeToPx($h3FontSize/2) + $padding * 2) + px;
+
+                @include breakpoint('desktop'){
+                    font-size: $h1FontSize/2.5 + rem;
+                    line-height: (fontsizeToPx($h3FontSize) + $padding * 2) + px;
+                }
+            }
+
+            @include breakpoint('desktop'){
+                font-size: $h3FontSize + rem;
+            }
+        }
+
+        nav {
+            position: absolute;
+            top: 0;
+            right: 0;
+            display: none;
+                                
+            @include breakpoint('ftablet'){
+                display: block;
+            }
+        
+            ul {
+                li {
+                    float: left;
+                    margin: 0 10px;
+                    list-style: none;
+
+                    @include breakpoint('desktop'){
+                        margin: 0 20px;
+                    }
+
+                    a {
+                        color: $FontColor;
+                    }
                 }
             }
         }
@@ -150,28 +184,34 @@ a {
 }
 
 main {
+    position: relative;
 
     &.mainBg {
-        margin-top: 104px;
+        margin-top: -60px;
         background: {
             color: #3c3e3d;
             image: url(../images/bg-grid01.png);
             size: 35px auto;
             attachment: fixed;
         }
+
+        @include breakpoint('desktop'){
+            //margin-top: 104px;
+        }
     }
 
     &.subBg {
-        margin-top: 64px;
+        //margin-top: 64px;
         margin-left: auto;
         margin-right: auto;
-        max-width: 42rem;
+        max-width: 52rem;
         padding: 2.625rem 1.3125rem;
         background: #fff;
     }
 
     .topIntro {
         height: 50vh;
+        overflow: hidden;
         color: #fff;
         clip-path: polygon(0 0, 100% 0, 100% 100%, 0 90%);
 
@@ -185,8 +225,7 @@ main {
             width: 100%;
             height: 100%;
             text-align: center;
-            // background-image: url(../images/home2-1600x865.jpg);
-            background-color: black;
+            background-color: #129cff;
             background-size: cover;
             background-position: 50%;
             background-repeat: no-repeat;
@@ -207,7 +246,7 @@ main {
                 right: 0;
                 bottom: 0;
                 left: 0;
-                background-color: #33f58b;
+                background-color: #000;
             }
 
             .mainText {
@@ -220,7 +259,7 @@ main {
                 line-height: 1.5;
 
                 h2 {
-                    margin: 50px 0 0 10%;
+                    margin: 40px 0 0 20px;
                     font-size: 30px;
     
                     @include breakpoint('tablet'){
@@ -236,13 +275,13 @@ main {
 
                 .shape {
                     position: absolute;
-                    top: -50px;
+                    top: -40px;
                     z-index: 2;
                     width: 140px;
                     height: 140px;
                     border-radius: 36% 64% 63% 37%/54% 60% 44% 48%;
                     overflow: hidden;
-                    background-color: #33f58b;
+                    background-color: #1d39c1;
                     white-space: nowrap;
                     animation: 3s linear infinite slime;
 

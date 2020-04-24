@@ -4,7 +4,6 @@ h3 {
 
 p {
   margin-bottom: 1.5rem;
-  font-family: 'Arial, sans-serif';
 }
 
 a {
@@ -68,67 +67,98 @@ a {
 
 /* LAYOUT */
 #header {
+  position: relative;
+  top: 0;
+  width: 100%;
+  height: 0;
+  background: transparent;
+  padding: 25px 0;
+}
+
+#header .sec01 {
+  height: 110vh;
+}
+
+#header .sec02 {
+  height: 50vh;
+}
+
+#header .trigger2 {
+  position: relative;
+}
+
+#header .titleWrap {
   position: fixed;
   top: 0;
-  z-index: 10;
+  z-index: 1;
   width: 100%;
-  background: #33f58b;
-  padding: 20px;
+  height: 50px;
+  opacity: 1;
+  border-bottom: 1px solid #000;
+  -webkit-transition: all 0.5s cubic-bezier(0.7, 0, 0.3, 1);
+  transition: all 0.5s cubic-bezier(0.7, 0, 0.3, 1);
 }
 
-#header .mainTitle {
+#header .titleWrap h1 {
+  margin: 0;
+}
+
+#header .titleWrap h1 a {
+  color: #3d3e3d;
+}
+
+#header .titleWrap .mainTitle {
   margin: 0;
   line-height: 1;
-  font-size: 2rem;
+  font-size: 1.5rem;
 }
 
-#header .mainTitle ~ nav ul li a {
+@media (min-width: 1049px) {
+  #header .titleWrap .mainTitle {
+    font-size: 3rem;
+  }
+}
+
+#header .titleWrap .mainTitle ~ nav ul li a {
   -webkit-box-shadow: none;
           box-shadow: none;
-  font-size: 0.8rem;
-  line-height: 72px;
+  font-size: 0.6rem;
+  line-height: 50px;
 }
 
 @media (min-width: 1049px) {
-  #header .mainTitle ~ nav ul li a {
-    font-size: 1.6rem;
-    line-height: 104px;
+  #header .titleWrap .mainTitle ~ nav ul li a {
+    font-size: 1.2rem;
   }
 }
 
-@media (min-width: 1049px) {
-  #header .mainTitle {
-    font-size: 4rem;
-  }
-}
-
-#header .subTitle {
+#header .titleWrap .subTitle {
   margin: 0;
   line-height: 1;
   font-size: 0.75rem;
 }
 
-#header .subTitle ~ nav ul li a {
+#header .titleWrap .subTitle ~ nav ul li a {
   -webkit-box-shadow: none;
           box-shadow: none;
-  font-size: 0.8rem;
-  line-height: 52px;
+  font-size: 0.6rem;
+  line-height: 62px;
 }
 
 @media (min-width: 1049px) {
-  #header .subTitle ~ nav ul li a {
-    font-size: 1.6rem;
-    line-height: 64px;
+  #header .titleWrap .subTitle ~ nav ul li a {
+    font-size: 1.2rem;
+    line-height: 74px;
   }
 }
 
 @media (min-width: 1049px) {
-  #header .subTitle {
+  #header .titleWrap .subTitle {
     font-size: 1.5rem;
   }
 }
 
-#header nav {
+#header .titleWrap nav {
   position: absolute;
   top: 0;
   right: 0;
@@ -136,25 +166,33 @@ a {
 }
 
 @media (min-width: 480px) {
-  #header nav {
+  #header .titleWrap nav {
     display: block;
   }
 }
 
-#header nav ul li {
+#header .titleWrap nav ul li {
   float: left;
   margin: 0 10px;
   list-style: none;
 }
 
 @media (min-width: 1049px) {
-  #header nav ul li {
+  #header .titleWrap nav ul li {
     margin: 0 20px;
   }
 }
 
+#header .titleWrap nav ul li a {
+  color: #3d3e3d;
+}
+
+main {
+  position: relative;
+}
+
 main.mainBg {
-  margin-top: 104px;
+  margin-top: -60px;
   background-color: #3c3e3d;
   background-image: url(../images/bg-grid01.png);
   background-size: 35px auto;
@@ -162,16 +200,16 @@ main.mainBg {
 }
 
 main.subBg {
-  margin-top: 64px;
   margin-left: auto;
   margin-right: auto;
-  max-width: 42rem;
+  max-width: 52rem;
   padding: 2.625rem 1.3125rem;
   background: #fff;
 }
 
 main .topIntro {
   height: 50vh;
+  overflow: hidden;
   color: #fff;
   -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 90%);
           clip-path: polygon(0 0, 100% 0, 100% 100%, 0 90%);
@@ -189,7 +227,7 @@ main .topIntro .inner {
   width: 100%;
   height: 100%;
   text-align: center;
-  background-color: black;
+  background-color: #129cff;
   background-size: cover;
   background-position: 50%;
   background-repeat: no-repeat;
@@ -209,7 +247,7 @@ main .topIntro .inner .colorBg {
   right: 0;
   bottom: 0;
   left: 0;
-  background-color: #33f58b;
+  background-color: #000;
 }
 
 main .topIntro .inner .mainText {
@@ -223,7 +261,7 @@ main .topIntro .inner .mainText {
 }
 
 main .topIntro .inner .mainText h2 {
-  margin: 50px 0 0 10%;
+  margin: 40px 0 0 20px;
   font-size: 30px;
 }
 
@@ -243,13 +281,13 @@ main .topIntro .inner .mainText h2 {
 
 main .topIntro .inner .mainText .shape {
   position: absolute;
-  top: -50px;
+  top: -40px;
   z-index: 2;
   width: 140px;
   height: 140px;
   border-radius: 36% 64% 63% 37%/54% 60% 44% 48%;
   overflow: hidden;
-  background-color: #33f58b;
+  background-color: #1d39c1;
   white-space: nowrap;
   -webkit-animation: 3s linear infinite slime;
           animation: 3s linear infinite slime;
