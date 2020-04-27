@@ -101,7 +101,7 @@ a {
         width: 100%;
         height: ($padding * 2) + px;
         opacity: 1;
-        border-bottom: 1px solid #000;
+        border-bottom: 1px solid $FontColor;
         transition: all .5s cubic-bezier(.7,0,.3,1);
 
         h1 {
@@ -113,6 +113,8 @@ a {
         }
 
         .mainTitle {
+            position: relative;
+            top: 3px;
             margin: 0;
             line-height: 1;
             font-size: $h1FontSize/2 + rem;
@@ -233,7 +235,7 @@ main {
             // transition: all 1s cubic-bezier(.7,0,.3,1);
 
             .section {
-                height: 50vh;
+                height: 55vh;
             }
 
             .trigger {
@@ -247,6 +249,64 @@ main {
                 bottom: 0;
                 left: 0;
                 background-color: #000;
+            }
+
+            #shape01 {
+                position: absolute;
+                top: 0;
+                left: 50%;
+                width: 600px;
+                transform: translate(-320px, -60%);
+    
+                @include breakpoint('tablet'){
+                    width: 1300px;
+                    transform: translate(-600px, -50%);
+                    
+                }
+    
+                div {
+                    //padding-top: 66%;
+                }
+    
+                .svg {
+                    width: 100%;
+                    height: 100%;
+                    overflow: hidden;
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    bottom: 0;
+                    left: 0;
+                }
+            }
+
+            #shape02 {
+                position: absolute;
+                top: 0;
+                left: 50%;
+                width: 450px;
+                transform: translate(-150px, 40%);
+    
+                @include breakpoint('tablet'){
+                    width: 1200px;
+                    transform: translate(-350px, 40%);
+                    
+                }
+    
+                div {
+                    //padding-top: 66%;
+                }
+    
+                .svg {
+                    width: 100%;
+                    height: 100%;
+                    overflow: hidden;
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    bottom: 0;
+                    left: 0;
+                }
             }
 
             .mainText {
@@ -324,34 +384,6 @@ main {
 
     .work {
         position: relative;
-
-        #bird {
-            position: absolute;
-            left: 0;
-            max-width: 375px;
-            width: 25%;
-            display: none;
-            transform: translateY(-100%);
-
-            @include breakpoint('tablet'){
-                display: block;
-            }
-
-            div {
-                padding-top: 66%;
-            }
-
-            .svg {
-                width: 100%;
-                height: 100%;
-                overflow: hidden;
-                position: absolute;
-                top: 0;
-                right: 0;
-                bottom: 0;
-                left: 0;
-            }
-        }
 
         .inner {
             width: 90%;
@@ -466,11 +498,12 @@ main {
                                 top:0;
                                 width: 100%;
                                 height: 100%;
+                                transition: 1s ease all;
                             }
         
                             .projectImg01 {
                                 background: {
-                                    image: url(../images/home2-1600x865.jpg);
+                                    image: url(../images/img-project-YIC.png);
                                     size: cover;
                                 }
                                 transition: 1s ease all;

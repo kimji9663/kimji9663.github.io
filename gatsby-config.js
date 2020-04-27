@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: `Jihye Kim's Blog`,
+    title: `Jihye Kim`,
     author: `Jihye Kim`,
     description: `공부하고 기록하는 블로그 입니다.`,
     siteUrl: `https://kimji9663.netlify.com/`,
