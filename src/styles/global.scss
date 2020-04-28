@@ -117,18 +117,20 @@ a {
             top: 3px;
             margin: 0;
             line-height: 1;
-            font-size: $h1FontSize/2 + rem;
+            font-size: $h1FontSize + rem;
 
             @include breakpoint('desktop'){
-                font-size: $h1FontSize + rem;
+                //font-size: $h1FontSize + rem;
             }
 
             & ~ nav ul li a {
+                display: none;
                 box-shadow: none;
                 font-size: $h1FontSize/2/2.5 + rem;
                 line-height: ($padding * 2) + px;
 
                 @include breakpoint('desktop'){
+                    display: block;
                     font-size: $h1FontSize/2.5 + rem;
                 }
             }
@@ -212,13 +214,13 @@ main {
     }
 
     .topIntro {
-        height: 50vh;
+        height: 80vh;
         overflow: hidden;
         color: #fff;
         clip-path: polygon(0 0, 100% 0, 100% 100%, 0 90%);
 
         @include breakpoint('tablet'){
-            height: 80vh;
+            //height: 80vh;
         }
     
         .inner {
@@ -235,7 +237,7 @@ main {
             // transition: all 1s cubic-bezier(.7,0,.3,1);
 
             .section {
-                height: 55vh;
+                height: 65vh;
             }
 
             .trigger {
@@ -256,7 +258,7 @@ main {
                 top: 0;
                 left: 50%;
                 width: 600px;
-                transform: translate(-320px, -60%);
+                transform: translate(-320px, -50%);
     
                 @include breakpoint('tablet'){
                     width: 1300px;
@@ -285,7 +287,7 @@ main {
                 top: 0;
                 left: 50%;
                 width: 450px;
-                transform: translate(-150px, 40%);
+                transform: translate(-150px, 80%);
     
                 @include breakpoint('tablet'){
                     width: 1200px;
@@ -319,26 +321,26 @@ main {
                 line-height: 1.5;
 
                 h2 {
-                    margin: 40px 0 0 20px;
-                    font-size: 30px;
+                    margin: 60px 0 0 30px;
+                    font-size: 40px;
     
                     @include breakpoint('tablet'){
-                        font-size: 60px;
-                        margin: 120px 0 0 40px;
+                        font-size: 100px;
+                        margin: 110px 0 0 70px;
                     }
 
                     @include breakpoint('desktop'){
-                        font-size: 80px;
-                        margin: 150px 0 0 50px;
+                        font-size: 120px;
+                        margin: 100px 0 0 100px;
                     }
                 }
 
                 .shape {
                     position: absolute;
-                    top: -40px;
+                    top: -60px;
                     z-index: 2;
-                    width: 140px;
-                    height: 140px;
+                    width: 180px;
+                    height: 180px;
                     border-radius: 36% 64% 63% 37%/54% 60% 44% 48%;
                     overflow: hidden;
                     background-color: #1d39c1;
@@ -346,13 +348,13 @@ main {
                     animation: 3s linear infinite slime;
 
                     @include breakpoint('tablet'){
-                        top: -120px;
-                        width: 300px;
-                        height: 300px;
+                        top: -110px;
+                        width: 370px;
+                        height: 370px;
                     }
 
                     @include breakpoint('desktop'){
-                        top: -150px;
+                        top: -100px;
                         width: 400px;
                         height: 400px;
                     }
@@ -392,6 +394,7 @@ main {
 
             @include breakpoint('desktop'){
                 padding-top: 50px;
+                width: 90%;
             }
     
             h2 {
@@ -422,7 +425,14 @@ main {
 
                     li {
                         position: relative;
+                        margin-bottom: 7%;
+                        width: 100%;
+                        height: 100%;
                         list-style: none;
+                        
+                        @include breakpoint('tablet') {
+                            max-width: 800px;
+                        }
 
                         &:nth-child(odd) {
     
@@ -467,70 +477,103 @@ main {
                                 height: 40px;
                             }    
                         }
+                        .info {
+                            position: relative;
     
-                        .imgWrap {
-                            width: 300px;
-                            height: 200px;
-                            overflow: hidden;
-                            transition: .5s ease-out all;
+                            .imgWrap {
+                                overflow: hidden;
+                                transition: .5s ease-out all;
 
-                            @include breakpoint('tablet'){
-                                width: 400px;
-                                height: 266px;
-                            }
+                                figure {
+                                    padding-bottom: 65%;
+                                    position: relative;
+                                    top:0;
+                                    width: 100%;
+                                    height: 100%;
+                                    transition: 1s ease all;
+                                }
 
-                            @include breakpoint('desktop'){
-                                width: 600px;
-                                height: 400px;
+                                .btnWrap {
+                                    position: absolute;
+                                    top: 50%;
+                                    left: 0;
+                                    margin-top: -23px;
+                                    width: 100%;
+                                    text-align: center;
 
-                                &:hover {
-                                    transform: scale(0.9);
-    
-                                    figure {
-                                        top: 50px;
-                                        transform: scale(1.2);
+                                    a {
+                                        box-shadow: none;
+                                    }
+
+                                    span {
+                                        display: inline-block;
+                                        position: relative;
+                                        overflow: hidden;
+                                        margin: 0 10px;
+                                        padding: 12px 20px 8px;
+                                        min-width: 140px;
+                                        border-radius: 10px;
+                                        background: #119cff;
+                                        color: #fff;
+                                        font-family: sans-serif;
+                                        font-size: 0;
+                                        line-height: 1;
+                                        text-align: center;
+                                        opacity: 0;
+                                        transition: 1s ease all;
+
+                                        &:before {
+                                            position: absolute;
+                                            top: 50%;
+                                            left: 50%;
+                                            margin: -40px -60px;
+                                            width: 120px;
+                                            height: 80px;
+                                            border-radius: 50%;
+                                            background: #52b7ff;
+                                            transform: scale(0);
+                                            transition: .5s ease all;
+                                            content: '';
+                                        }
+
+                                        &:after {
+                                            position: relative;
+                                            font-size: 22px;
+                                        }
+
+                                        &.res:after {
+                                            content: 'Responsive';
+                                        }
+                                        &.pc_m:after {
+                                            content: 'PC / Mobile';
+                                        }
+                                        &.mob:after {
+                                            content: 'Mobile';
+                                        }
                                     }
                                 }
-                            }
 
-                            figure {
-                                position: relative;
-                                top:0;
-                                width: 100%;
-                                height: 100%;
-                                transition: 1s ease all;
-                            }
+                                @include breakpoint('desktop'){
+
+                                    &:hover {
+                                        //background: #000;
+                                        transform: scale(0.9);
         
-                            .projectImg01 {
-                                background: {
-                                    image: url(../images/img-project-YIC.png);
-                                    size: cover;
+                                        figure {
+                                            top: 50px;
+                                            transform: scale(1.3);
+                                            opacity: .4;
+                                        }
+
+                                        .btnWrap span {
+                                            opacity: 1;
+                                        }
+                                    }
+
+                                    .btnWrap span:hover:before {
+                                        transform: scale(1);
+                                    }
                                 }
-                                transition: 1s ease all;
-                            }
-    
-                            .projectImg02 {
-                                background: {
-                                    image: url(../images/home2-1600x865.jpg);
-                                    size: cover;
-                                }
-                                transition: 1s ease all;
-                            }
-    
-                            .projectImg03 {
-                                background: {
-                                    image: url(../images/home2-1600x865.jpg);
-                                    size: cover;
-                                }
-                                transition: 1s ease all;
-                            }
-    
-                            .projectImg04 {
-                                background: {
-                                    image: url(../images/home2-1600x865.jpg);
-                                    size: cover;
-                                }
-                                transition: 1s ease all;
                             }
                         }
                     }

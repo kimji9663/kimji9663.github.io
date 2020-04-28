@@ -18,9 +18,9 @@ const Intro = () => {
                         <ul>
                             <li>
                                 <h3>project01</h3>
-                                <Link to={`/`}>
-                                    <span className="conerDecoration"></span>
-                                    <span className="conerDecoration"></span>
+                                <span className="conerDecoration"></span>
+                                <span className="conerDecoration"></span>
+                                <div className="info">
                                     <div className="imgWrap">
                                         <figure 
                                         style={{
@@ -28,29 +28,39 @@ const Intro = () => {
                                             backgroundSize: `cover`
                                         }}
                                         />
+                                        <div className="btnWrap">
+                                            <a href="/">
+                                                <span className="res">Responsive</span>
+                                            </a>
+                                        </div>
                                     </div>
-                                </Link>
+                                </div>
                             </li>
                             <li>
                                 <h3>project02</h3>
-                                <Link to={`https://www.eroundmall.com/`}>
-                                    <span className="conerDecoration"></span>
-                                    <span className="conerDecoration"></span>
+                                <span className="conerDecoration"></span>
+                                <span className="conerDecoration"></span>
+                                <div className="info">
                                     <div className="imgWrap">
                                         <figure 
                                         style={{
-                                            backgroundImage: `url(${require("../images/img-project-eround3.png")})`,
+                                            backgroundImage: `url(${require("../images/img-project-eround.png")})`,
                                             backgroundSize: `cover`
                                         }}
                                         />
+                                        <div className="btnWrap">
+                                            <a href="https://www.eroundmall.com/" target="_blank">
+                                                <span className="pc_m">PC / Mobile</span>
+                                            </a>
+                                        </div>
                                     </div>
-                                </Link>
+                                </div>
                             </li>
                             <li>
                                 <h3>project03</h3>
-                                <Link to={`/`}>
-                                    <span className="conerDecoration"></span>
-                                    <span className="conerDecoration"></span>
+                                <span className="conerDecoration"></span>
+                                <span className="conerDecoration"></span>
+                                <div className="info">
                                     <div className="imgWrap">
                                         <figure 
                                         style={{
@@ -58,14 +68,19 @@ const Intro = () => {
                                             backgroundSize: `cover`
                                         }}
                                         />
+                                        <div className="btnWrap">
+                                            <a href="https://www.yic.co.kr/" target="_blank">
+                                                <span className="res">Responsive</span>
+                                            </a>
+                                        </div>
                                     </div>
-                                </Link>
+                                </div>
                             </li>
                             <li>
                                 <h3>project04</h3>
-                                <Link to={`/`}>
-                                    <span className="conerDecoration"></span>
-                                    <span className="conerDecoration"></span>
+                                <span className="conerDecoration"></span>
+                                <span className="conerDecoration"></span>
+                                <div className="info">
                                     <div className="imgWrap">
                                         <figure 
                                         style={{
@@ -73,8 +88,13 @@ const Intro = () => {
                                             backgroundSize: `cover`
                                         }}
                                         />
+                                        <div className="btnWrap">
+                                            <a href="/" target="_blank">
+                                                <span className="pc_m">PC / Mobile</span>
+                                            </a>
+                                        </div>
                                     </div>
-                                </Link>
+                                </div>
                             </li>
                         </ul>
                     </div>

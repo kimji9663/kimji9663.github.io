@@ -80,7 +80,6 @@ const TweenComponent = () => {
                     <Scene
                     triggerElement="#trigger"
                     duration={400}
-                    indicators={true}
                     >
                         {(progress) => (
                             <Tween
@@ -115,7 +114,7 @@ const TweenComponent = () => {
                         {(progress) => (
                             <Tween
                             from={{
-                            css: {top: '-30vh', opacity: '1'},
+                            css: {top: '-45vh', opacity: '1'},
                             ease: 'linear'}
                             }
                             to={{
@@ -198,7 +197,6 @@ const TweenComponent = () => {
                     <Scene
                     triggerElement="#trigger"
                     duration={400}
-                    indicators={true}
                     >
                         {(progress) => (
                             <Tween
@@ -229,11 +227,12 @@ const TweenComponent = () => {
                     <Scene 
                     triggerElement="#trigger"
                     duration={300}
+                    indicators={true}
                     >
                         {(progress) => (
                             <Tween
                             from={{
-                            css: {top: '-38vh', opacity: '1'},
+                            css: {top: '-42vh', opacity: '1'},
                             ease: 'linear'}
                             }
                             to={{

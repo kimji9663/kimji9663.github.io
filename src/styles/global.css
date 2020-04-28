@@ -112,16 +112,11 @@ a {
   top: 3px;
   margin: 0;
   line-height: 1;
-  font-size: 1.5rem;
-}
-
-@media (min-width: 1049px) {
-  #header .titleWrap .mainTitle {
-    font-size: 3rem;
-  }
+  font-size: 3rem;
 }
 
 #header .titleWrap .mainTitle ~ nav ul li a {
+  display: none;
   -webkit-box-shadow: none;
           box-shadow: none;
   font-size: 0.6rem;
@@ -130,6 +125,7 @@ a {
 
 @media (min-width: 1049px) {
   #header .titleWrap .mainTitle ~ nav ul li a {
+    display: block;
     font-size: 1.2rem;
   }
 }
@@ -210,17 +206,11 @@ main.subBg {
 }
 
 main .topIntro {
-  height: 50vh;
+  height: 80vh;
   overflow: hidden;
   color: #fff;
   -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 90%);
           clip-path: polygon(0 0, 100% 0, 100% 100%, 0 90%);
-}
-
-@media (min-width: 778px) {
-  main .topIntro {
-    height: 80vh;
-  }
 }
 
 main .topIntro .inner {
@@ -236,7 +226,7 @@ main .topIntro .inner {
 }
 
 main .topIntro .inner .section {
-  height: 55vh;
+  height: 65vh;
 }
 
 main .topIntro .inner .trigger {
@@ -257,8 +247,8 @@ main .topIntro .inner #shape01 {
   top: 0;
   left: 50%;
   width: 600px;
-  -webkit-transform: translate(-320px, -60%);
-          transform: translate(-320px, -60%);
+  -webkit-transform: translate(-320px, -50%);
+          transform: translate(-320px, -50%);
 }
 
 @media (min-width: 778px) {
@@ -285,8 +275,8 @@ main .topIntro .inner #shape02 {
   top: 0;
   left: 50%;
   width: 450px;
-  -webkit-transform: translate(-150px, 40%);
-          transform: translate(-150px, 40%);
+  -webkit-transform: translate(-150px, 80%);
+          transform: translate(-150px, 80%);
 }
 
 @media (min-width: 778px) {
@@ -319,30 +309,30 @@ main .topIntro .inner .mainText {
 }
 
 main .topIntro .inner .mainText h2 {
-  margin: 40px 0 0 20px;
-  font-size: 30px;
+  margin: 60px 0 0 30px;
+  font-size: 40px;
 }
 
 @media (min-width: 778px) {
   main .topIntro .inner .mainText h2 {
-    font-size: 60px;
-    margin: 120px 0 0 40px;
+    font-size: 100px;
+    margin: 110px 0 0 70px;
   }
 }
 
 @media (min-width: 1049px) {
   main .topIntro .inner .mainText h2 {
-    font-size: 80px;
-    margin: 150px 0 0 50px;
+    font-size: 120px;
+    margin: 100px 0 0 100px;
   }
 }
 
 main .topIntro .inner .mainText .shape {
   position: absolute;
-  top: -40px;
+  top: -60px;
   z-index: 2;
-  width: 140px;
-  height: 140px;
+  width: 180px;
+  height: 180px;
   border-radius: 36% 64% 63% 37%/54% 60% 44% 48%;
   overflow: hidden;
   background-color: #1d39c1;
@@ -353,15 +343,15 @@ main .topIntro .inner .mainText .shape {
 
 @media (min-width: 778px) {
   main .topIntro .inner .mainText .shape {
-    top: -120px;
-    width: 300px;
-    height: 300px;
+    top: -110px;
+    width: 370px;
+    height: 370px;
   }
 }
 
 @media (min-width: 1049px) {
   main .topIntro .inner .mainText .shape {
-    top: -150px;
+    top: -100px;
     width: 400px;
     height: 400px;
   }
@@ -429,6 +419,7 @@ main .work .inner {
 @media (min-width: 1049px) {
   main .work .inner {
     padding-top: 50px;
+    width: 90%;
   }
 }
 
@@ -474,7 +465,16 @@ main .work .inner .projectList ul {
 
 main .work .inner .projectList ul li {
   position: relative;
+  margin-bottom: 7%;
+  width: 100%;
+  height: 100%;
   list-style: none;
+}
+
+@media (min-width: 778px) {
+  main .work .inner .projectList ul li {
+    max-width: 800px;
+  }
 }
 
 @media (min-width: 778px) {
@@ -521,38 +521,18 @@ main .work .inner .projectList ul li .conerDecoration:nth-of-type(2) {
   height: 40px;
 }
 
-main .work .inner .projectList ul li .imgWrap {
-  width: 300px;
-  height: 200px;
+main .work .inner .projectList ul li .info {
+  position: relative;
+}
+
+main .work .inner .projectList ul li .info .imgWrap {
   overflow: hidden;
   -webkit-transition: .5s ease-out all;
   transition: .5s ease-out all;
 }
 
-@media (min-width: 778px) {
-  main .work .inner .projectList ul li .imgWrap {
-    width: 400px;
-    height: 266px;
-  }
-}
-
-@media (min-width: 1049px) {
-  main .work .inner .projectList ul li .imgWrap {
-    width: 600px;
-    height: 400px;
-  }
-  main .work .inner .projectList ul li .imgWrap:hover {
-    -webkit-transform: scale(0.9);
-            transform: scale(0.9);
-  }
-  main .work .inner .projectList ul li .imgWrap:hover figure {
-    top: 50px;
-    -webkit-transform: scale(1.2);
-            transform: scale(1.2);
-  }
-}
-
-main .work .inner .projectList ul li .imgWrap figure {
+main .work .inner .projectList ul li .info .imgWrap figure {
+  padding-bottom: 65%;
   position: relative;
   top: 0;
   width: 100%;
@@ -561,32 +541,90 @@ main .work .inner .projectList ul li .imgWrap figure {
   transition: 1s ease all;
 }
 
-main .work .inner .projectList ul li .imgWrap .projectImg01 {
-  background-image: url(../images/img-project-YIC.png);
-  background-size: cover;
+main .work .inner .projectList ul li .info .imgWrap .btnWrap {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  margin-top: -23px;
+  width: 100%;
+  text-align: center;
+}
+
+main .work .inner .projectList ul li .info .imgWrap .btnWrap a {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+main .work .inner .projectList ul li .info .imgWrap .btnWrap span {
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+  margin: 0 10px;
+  padding: 12px 20px 8px;
+  min-width: 140px;
+  border-radius: 10px;
+  background: #119cff;
+  color: #fff;
+  font-family: sans-serif;
+  font-size: 0;
+  line-height: 1;
+  text-align: center;
+  opacity: 0;
   -webkit-transition: 1s ease all;
   transition: 1s ease all;
 }
 
-main .work .inner .projectList ul li .imgWrap .projectImg02 {
-  background-image: url(../images/home2-1600x865.jpg);
-  background-size: cover;
-  -webkit-transition: 1s ease all;
-  transition: 1s ease all;
+main .work .inner .projectList ul li .info .imgWrap .btnWrap span:before {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: -40px -60px;
+  width: 120px;
+  height: 80px;
+  border-radius: 50%;
+  background: #52b7ff;
+  -webkit-transform: scale(0);
+          transform: scale(0);
+  -webkit-transition: .5s ease all;
+  transition: .5s ease all;
+  content: '';
 }
 
-main .work .inner .projectList ul li .imgWrap .projectImg03 {
-  background-image: url(../images/home2-1600x865.jpg);
-  background-size: cover;
-  -webkit-transition: 1s ease all;
-  transition: 1s ease all;
+main .work .inner .projectList ul li .info .imgWrap .btnWrap span:after {
+  position: relative;
+  font-size: 22px;
 }
 
-main .work .inner .projectList ul li .imgWrap .projectImg04 {
-  background-image: url(../images/home2-1600x865.jpg);
-  background-size: cover;
-  -webkit-transition: 1s ease all;
-  transition: 1s ease all;
+main .work .inner .projectList ul li .info .imgWrap .btnWrap span.res:after {
+  content: 'Responsive';
+}
+
+main .work .inner .projectList ul li .info .imgWrap .btnWrap span.pc_m:after {
+  content: 'PC / Mobile';
+}
+
+main .work .inner .projectList ul li .info .imgWrap .btnWrap span.mob:after {
+  content: 'Mobile';
+}
+
+@media (min-width: 1049px) {
+  main .work .inner .projectList ul li .info .imgWrap:hover {
+    -webkit-transform: scale(0.9);
+            transform: scale(0.9);
+  }
+  main .work .inner .projectList ul li .info .imgWrap:hover figure {
+    top: 50px;
+    -webkit-transform: scale(1.3);
+            transform: scale(1.3);
+    opacity: .4;
+  }
+  main .work .inner .projectList ul li .info .imgWrap:hover .btnWrap span {
+    opacity: 1;
+  }
+  main .work .inner .projectList ul li .info .imgWrap .btnWrap span:hover:before {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
 }
 
 #footer {
