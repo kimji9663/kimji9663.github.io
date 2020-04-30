@@ -1,6 +1,6 @@
 @import './breakpoint.scss';
 
-h3 {
+body, h3 {
     font-family: 'sans-serif'
 }
 p {
@@ -114,10 +114,14 @@ a {
 
         .mainTitle {
             position: relative;
-            top: 3px;
             margin: 0;
+            padding-top: 2px;
             line-height: 1;
             font-size: $h1FontSize + rem;
+
+            &.blog {
+                background-color: rgba(255, 255, 255, .8);
+            }
 
             @include breakpoint('desktop'){
                 //font-size: $h1FontSize + rem;
@@ -133,28 +137,6 @@ a {
                     display: block;
                     font-size: $h1FontSize/2.5 + rem;
                 }
-            }
-        }
-
-        .subTitle {
-            margin: 0;
-            line-height: 1;
-            font-size: $h3FontSize/2 + rem;
-            // font-family: Montserrat, sans-serif;
-
-            & ~ nav ul li a {
-                box-shadow: none;
-                font-size: $h1FontSize/2/2.5 + rem;
-                line-height: (fontsizeToPx($h3FontSize/2) + $padding * 2) + px;
-
-                @include breakpoint('desktop'){
-                    font-size: $h1FontSize/2.5 + rem;
-                    line-height: (fontsizeToPx($h3FontSize) + $padding * 2) + px;
-                }
-            }
-
-            @include breakpoint('desktop'){
-                font-size: $h3FontSize + rem;
             }
         }
 
@@ -180,6 +162,10 @@ a {
 
                     a {
                         color: $FontColor;
+
+                        &.github svg {
+                            margin-top: 8px;
+                        }
                     }
                 }
             }
@@ -191,26 +177,59 @@ main {
     position: relative;
 
     &.mainBg {
-        margin-top: -60px;
+        margin-top: -50px;
         background: {
             color: #3c3e3d;
             image: url(../images/bg-grid01.png);
             size: 35px auto;
             attachment: fixed;
         }
-
-        @include breakpoint('desktop'){
-            //margin-top: 104px;
-        }
     }
 
     &.subBg {
-        //margin-top: 64px;
-        margin-left: auto;
-        margin-right: auto;
-        max-width: 52rem;
-        padding: 2.625rem 1.3125rem;
-        background: #fff;
+        margin-top: -50px;
+        background: {
+            color: #fff;
+            image: url(../images/bg-grid01.png);
+            size: 35px auto;
+            attachment: fixed;
+        }
+
+        .blogTop {
+            padding: 100px 0 50px;
+            min-height: 300px;
+            //background: #ceeaff;
+            background: rgb(206,234,255);
+            background: linear-gradient(180deg, rgba(206,234,255,1) 0%, rgba(255,255,255,1) 100%);
+            border-bottom: 1px solid #ccc;
+            text-align: center;
+        }
+
+        .listWrap {
+            margin-left: auto;
+            margin-right: auto;
+            max-width: 52rem;
+            padding: 5px 20px;
+            border-left: 1px solid #ccc;
+            border-right: 1px solid #ccc;
+            background: #fff;
+        }
+
+        article {
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 15px;
+            box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.3);
+            background: #fff;
+
+            h3 {
+                margin-top: 0;
+            }
+
+            p {
+                margin-bottom: 0;
+            }
+        }
     }
 
     .topIntro {
@@ -218,10 +237,6 @@ main {
         overflow: hidden;
         color: #fff;
         clip-path: polygon(0 0, 100% 0, 100% 100%, 0 90%);
-
-        @include breakpoint('tablet'){
-            //height: 80vh;
-        }
     
         .inner {
             position: relative;
@@ -233,8 +248,6 @@ main {
             background-size: cover;
             background-position: 50%;
             background-repeat: no-repeat;
-            // transform: scale(1.2);
-            // transition: all 1s cubic-bezier(.7,0,.3,1);
 
             .section {
                 height: 65vh;
@@ -264,10 +277,6 @@ main {
                     width: 1300px;
                     transform: translate(-600px, -50%);
                     
-                }
-    
-                div {
-                    //padding-top: 66%;
                 }
     
                 .svg {
@@ -360,7 +369,7 @@ main {
                     }
 
                     span {
-                        color: #fbff00;
+                        color: #61ffea;
                     }
                 }
 
@@ -482,7 +491,7 @@ main {
     
                             .imgWrap {
                                 overflow: hidden;
-                                transition: .5s ease-out all;
+                                transition: all .2s ease 0s;
 
                                 figure {
                                     padding-bottom: 65%;
@@ -490,23 +499,39 @@ main {
                                     top:0;
                                     width: 100%;
                                     height: 100%;
-                                    transition: 1s ease all;
+                                    transition: all .5s ease-out 0s;
                                 }
 
                                 .btnWrap {
                                     position: absolute;
-                                    top: 50%;
+                                    top: 0;
                                     left: 0;
-                                    margin-top: -23px;
+                                    margin-top: 0;
                                     width: 100%;
+                                    height: 100%;
                                     text-align: center;
 
+                                    @include breakpoint('desktop'){
+                                        top: 50%;
+                                        margin-top: -23px;
+                                        height: auto;
+                                    }
+
                                     a {
+                                        display: block;
+                                        width: 100%;
+                                        height: 100%;
                                         box-shadow: none;
+
+                                        @include breakpoint('desktop'){
+                                            display: inline;
+                                            width: auto;
+                                            height: auto;
+                                        }
                                     }
 
                                     span {
-                                        display: inline-block;
+                                        display: none;
                                         position: relative;
                                         overflow: hidden;
                                         margin: 0 10px;
@@ -520,7 +545,11 @@ main {
                                         line-height: 1;
                                         text-align: center;
                                         opacity: 0;
-                                        transition: 1s ease all;
+                                        transition: .5s ease all;
+
+                                        @include breakpoint('desktop'){
+                                            display: inline-block;
+                                        }
 
                                         &:before {
                                             position: absolute;
@@ -556,13 +585,13 @@ main {
                                 @include breakpoint('desktop'){
 
                                     &:hover {
-                                        //background: #000;
-                                        transform: scale(0.9);
+                                        transform: scale(.9);
+                                        animation: over-dim .3s ease-in-out .3s alternate forwards;
         
                                         figure {
                                             top: 50px;
                                             transform: scale(1.3);
-                                            opacity: .4;
+                                            animation: over-opacity .3s ease-in-out .3s alternate forwards;
                                         }
 
                                         .btnWrap span {
@@ -594,4 +623,15 @@ main {
     @include breakpoint('desktop'){
         padding: 64px;
     }
+}
+
+
+/* ANIMATION */
+@keyframes over-dim {
+    0% { background-color: none;}
+    100% { background-color: #000;}
+}
+@keyframes over-opacity {
+    0% { opacity: 1; }
+    100% { opacity: .4; }
 }

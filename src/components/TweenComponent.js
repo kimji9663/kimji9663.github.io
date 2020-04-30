@@ -227,7 +227,6 @@ const TweenComponent = () => {
                     <Scene 
                     triggerElement="#trigger"
                     duration={300}
-                    indicators={true}
                     >
                         {(progress) => (
                             <Tween

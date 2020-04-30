@@ -1,4 +1,4 @@
-h3 {
+body, h3 {
   font-family: 'sans-serif';
 }
 
@@ -109,10 +109,14 @@ a {
 
 #header .titleWrap .mainTitle {
   position: relative;
-  top: 3px;
   margin: 0;
+  padding-top: 2px;
   line-height: 1;
   font-size: 3rem;
+}
+
+#header .titleWrap .mainTitle.blog {
+  background-color: rgba(255, 255, 255, 0.8);
 }
 
 #header .titleWrap .mainTitle ~ nav ul li a {
@@ -127,32 +131,6 @@ a {
   #header .titleWrap .mainTitle ~ nav ul li a {
     display: block;
     font-size: 1.2rem;
-  }
-}
-
-#header .titleWrap .subTitle {
-  margin: 0;
-  line-height: 1;
-  font-size: 0.75rem;
-}
-
-#header .titleWrap .subTitle ~ nav ul li a {
-  -webkit-box-shadow: none;
-          box-shadow: none;
-  font-size: 0.6rem;
-  line-height: 62px;
-}
-
-@media (min-width: 1049px) {
-  #header .titleWrap .subTitle ~ nav ul li a {
-    font-size: 1.2rem;
-    line-height: 74px;
-  }
-}
-
-@media (min-width: 1049px) {
-  #header .titleWrap .subTitle {
-    font-size: 1.5rem;
   }
 }
 
@@ -185,12 +163,16 @@ a {
   color: #3d3e3d;
 }
 
+#header .titleWrap nav ul li a.github svg {
+  margin-top: 8px;
+}
+
 main {
   position: relative;
 }
 
 main.mainBg {
-  margin-top: -60px;
+  margin-top: -50px;
   background-color: #3c3e3d;
   background-image: url(../images/bg-grid01.png);
   background-size: 35px auto;
@@ -198,11 +180,48 @@ main.mainBg {
 }
 
 main.subBg {
+  margin-top: -50px;
+  background-color: #fff;
+  background-image: url(../images/bg-grid01.png);
+  background-size: 35px auto;
+  background-attachment: fixed;
+}
+
+main.subBg .blogTop {
+  padding: 100px 0 50px;
+  min-height: 300px;
+  background: #ceeaff;
+  background: -webkit-gradient(linear, left top, left bottom, from(#ceeaff), to(white));
+  background: linear-gradient(180deg, #ceeaff 0%, white 100%);
+  border-bottom: 1px solid #ccc;
+  text-align: center;
+}
+
+main.subBg .listWrap {
   margin-left: auto;
   margin-right: auto;
   max-width: 52rem;
-  padding: 2.625rem 1.3125rem;
+  padding: 5px 20px;
+  border-left: 1px solid #ccc;
+  border-right: 1px solid #ccc;
   background: #fff;
+}
+
+main.subBg article {
+  padding: 15px;
+  margin: 15px 0;
+  border-radius: 15px;
+  -webkit-box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.3);
+          box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.3);
+  background: #fff;
+}
+
+main.subBg article h3 {
+  margin-top: 0;
+}
+
+main.subBg article p {
+  margin-bottom: 0;
 }
 
 main .topIntro {
@@ -358,7 +377,7 @@ main .topIntro .inner .mainText .shape {
 }
 
 main .topIntro .inner .mainText .shape span {
-  color: #fbff00;
+  color: #61ffea;
 }
 
 @-webkit-keyframes slime {
@@ -527,8 +546,8 @@ main .work .inner .projectList ul li .info {
 
 main .work .inner .projectList ul li .info .imgWrap {
   overflow: hidden;
-  -webkit-transition: .5s ease-out all;
-  transition: .5s ease-out all;
+  -webkit-transition: all .2s ease 0s;
+  transition: all .2s ease 0s;
 }
 
 main .work .inner .projectList ul li .info .imgWrap figure {
@@ -537,26 +556,46 @@ main .work .inner .projectList ul li .info .imgWrap figure {
   top: 0;
   width: 100%;
   height: 100%;
-  -webkit-transition: 1s ease all;
-  transition: 1s ease all;
+  -webkit-transition: all .5s ease-out 0s;
+  transition: all .5s ease-out 0s;
 }
 
 main .work .inner .projectList ul li .info .imgWrap .btnWrap {
   position: absolute;
-  top: 50%;
+  top: 0;
   left: 0;
-  margin-top: -23px;
+  margin-top: 0;
   width: 100%;
+  height: 100%;
   text-align: center;
 }
 
+@media (min-width: 1049px) {
+  main .work .inner .projectList ul li .info .imgWrap .btnWrap {
+    top: 50%;
+    margin-top: -23px;
+    height: auto;
+  }
+}
+
 main .work .inner .projectList ul li .info .imgWrap .btnWrap a {
+  display: block;
+  width: 100%;
+  height: 100%;
   -webkit-box-shadow: none;
           box-shadow: none;
 }
 
+@media (min-width: 1049px) {
+  main .work .inner .projectList ul li .info .imgWrap .btnWrap a {
+    display: inline;
+    width: auto;
+    height: auto;
+  }
+}
+
 main .work .inner .projectList ul li .info .imgWrap .btnWrap span {
-  display: inline-block;
+  display: none;
   position: relative;
   overflow: hidden;
   margin: 0 10px;
@@ -570,8 +609,14 @@ main .work .inner .projectList ul li .info .imgWrap .btnWrap span {
   line-height: 1;
   text-align: center;
   opacity: 0;
-  -webkit-transition: 1s ease all;
-  transition: 1s ease all;
+  -webkit-transition: .5s ease all;
+  transition: .5s ease all;
+}
+
+@media (min-width: 1049px) {
+  main .work .inner .projectList ul li .info .imgWrap .btnWrap span {
+    display: inline-block;
+  }
 }
 
 main .work .inner .projectList ul li .info .imgWrap .btnWrap span:before {
@@ -611,12 +656,15 @@ main .work .inner .projectList ul li .info .imgWrap .btnWrap span.mob:after {
   main .work .inner .projectList ul li .info .imgWrap:hover {
     -webkit-transform: scale(0.9);
             transform: scale(0.9);
+    -webkit-animation: over-dim .3s ease-in-out .3s alternate forwards;
+            animation: over-dim .3s ease-in-out .3s alternate forwards;
   }
   main .work .inner .projectList ul li .info .imgWrap:hover figure {
     top: 50px;
     -webkit-transform: scale(1.3);
             transform: scale(1.3);
-    opacity: .4;
+    -webkit-animation: over-opacity .3s ease-in-out .3s alternate forwards;
+            animation: over-opacity .3s ease-in-out .3s alternate forwards;
   }
   main .work .inner .projectList ul li .info .imgWrap:hover .btnWrap span {
     opacity: 1;
@@ -642,6 +690,42 @@ main .work .inner .projectList ul li .info .imgWrap .btnWrap span.mob:after {
 @media (min-width: 1049px) {
   #footer {
     padding: 64px;
+  }
+}
+
+/* ANIMATION */
+@-webkit-keyframes over-dim {
+  0% {
+    background-color: none;
+  }
+  100% {
+    background-color: #000;
+  }
+}
+@keyframes over-dim {
+  0% {
+    background-color: none;
+  }
+  100% {
+    background-color: #000;
+  }
+}
+
+@-webkit-keyframes over-opacity {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: .4;
+  }
+}
+
+@keyframes over-opacity {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: .4;
   }
 }
 /*# sourceMappingURL=global.css.map */

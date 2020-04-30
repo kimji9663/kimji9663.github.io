@@ -34,6 +34,17 @@ const Intro = () => {
                                             </a>
                                         </div>
                                     </div>
+                                    <div className="textWrap">
+                                        <p>2018</p>
+                                        <p>eroundmall</p>
+                                        <p>
+                                            <span className="html5">HTML5</span>
+                                            <span className="css3">CSS3</span>
+                                            <span className="javascript">javascript</span>
+                                            <span className="jquery">jQuery</span>
+                                            <span className="react">react</span>
+                                        </p>
+                                    </div>
                                 </div>
                             </li>
                             <li>
@@ -69,7 +80,7 @@ const Intro = () => {
                                         }}
                                         />
                                         <div className="btnWrap">
-                                            <a href="https://www.yic.co.kr/" target="_blank">
+                                            <a href="http://www.yic.co.kr/" target="_blank">
                                                 <span className="res">Responsive</span>
                                             </a>
                                         </div>
@@ -84,12 +95,12 @@ const Intro = () => {
                                     <div className="imgWrap">
                                         <figure 
                                         style={{
-                                            backgroundImage: `url(${require("../images/home2-1600x865.jpg")})`,
+                                            backgroundImage: `url(${require("../images/img-project-emh.png")})`,
                                             backgroundSize: `cover`
                                         }}
                                         />
                                         <div className="btnWrap">
-                                            <a href="/" target="_blank">
+                                            <a href="http://www.emhsystem.com/" target="_blank">
                                                 <span className="pc_m">PC / Mobile</span>
                                             </a>
                                         </div>
