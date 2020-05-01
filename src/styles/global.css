@@ -491,12 +491,6 @@ main .work .inner .projectList ul li {
 }
 
 @media (min-width: 778px) {
-  main .work .inner .projectList ul li {
-    max-width: 800px;
-  }
-}
-
-@media (min-width: 778px) {
   main .work .inner .projectList ul li:nth-child(odd) {
     -ms-flex-item-align: start;
         align-self: flex-start;
@@ -545,14 +539,20 @@ main .work .inner .projectList ul li .info {
 }
 
 main .work .inner .projectList ul li .info .imgWrap {
+  display: inline-block;
+  position: relative;
+  top: 0;
   overflow: hidden;
+  padding-bottom: 38%;
+  max-width: 800px;
+  width: 60%;
+  height: auto;
   -webkit-transition: all .2s ease 0s;
   transition: all .2s ease 0s;
 }
 
 main .work .inner .projectList ul li .info .imgWrap figure {
-  padding-bottom: 65%;
-  position: relative;
+  position: absolute;
   top: 0;
   width: 100%;
   height: 100%;
@@ -673,6 +673,11 @@ main .work .inner .projectList ul li .info .imgWrap .btnWrap span.mob:after {
     -webkit-transform: scale(1);
             transform: scale(1);
   }
+}
+
+main .work .inner .projectList ul li .info .textWrap {
+  display: inline-block;
+  color: #fff;
 }
 
 #footer {
