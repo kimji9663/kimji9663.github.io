@@ -36,7 +36,7 @@ const Intro = () => {
                                     </div>
                                     <div className="textWrap">
                                         <p>2018</p>
-                                        <p>eroundmall</p>
+                                        <p className="pTitle">eroundmall</p>
                                         <p>
                                             <span className="html5">HTML5</span>
                                             <span className="css3">CSS3</span>

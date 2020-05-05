@@ -487,9 +487,13 @@ main {
                         }
                         .info {
                             position: relative;
+
+                            & > div {
+                                display: inline-block;
+                                vertical-align: top;
+                            }
     
                             .imgWrap {
-                                display: inline-block;
                                 position: relative;
                                 top: 0;
                                 overflow: hidden;
@@ -610,8 +614,19 @@ main {
                                 }
                             }
                             .textWrap {
-                                display: inline-block;
                                 color: #fff;
+
+                                & > p {
+                                    margin: 0 0 10px 50px;
+
+                                    &:last-child {
+                                        margin-bottom: 0;
+                                    }
+                                }
+
+                                .pTitle {
+                                    font-size: 40px;
+                                }
                             }
                         }
                     }

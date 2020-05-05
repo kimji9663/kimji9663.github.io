@@ -538,8 +538,12 @@ main .work .inner .projectList ul li .info {
   position: relative;
 }
 
-main .work .inner .projectList ul li .info .imgWrap {
+main .work .inner .projectList ul li .info > div {
   display: inline-block;
+  vertical-align: top;
+}
+
+main .work .inner .projectList ul li .info .imgWrap {
   position: relative;
   top: 0;
   overflow: hidden;
@@ -676,8 +680,19 @@ main .work .inner .projectList ul li .info .imgWrap .btnWrap span.mob:after {
 }
 
 main .work .inner .projectList ul li .info .textWrap {
-  display: inline-block;
   color: #fff;
+}
+
+main .work .inner .projectList ul li .info .textWrap > p {
+  margin: 0 0 10px 50px;
+}
+
+main .work .inner .projectList ul li .info .textWrap > p:last-child {
+  margin-bottom: 0;
+}
+
+main .work .inner .projectList ul li .info .textWrap .pTitle {
+  font-size: 40px;
 }
 
 #footer {
