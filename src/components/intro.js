@@ -20,7 +20,7 @@ const Intro = () => {
                                 <h3>project01</h3>
                                 <span className="conerDecoration"></span>
                                 <span className="conerDecoration"></span>
-                                <div className="info">
+                                <div className="projectInfo">
                                     <div className="imgWrap">
                                         <figure 
                                         style={{
@@ -51,7 +51,7 @@ const Intro = () => {
                                 <h3>project02</h3>
                                 <span className="conerDecoration"></span>
                                 <span className="conerDecoration"></span>
-                                <div className="info">
+                                <div className="projectInfo">
                                     <div className="imgWrap">
                                         <figure 
                                         style={{
@@ -71,7 +71,7 @@ const Intro = () => {
                                 <h3>project03</h3>
                                 <span className="conerDecoration"></span>
                                 <span className="conerDecoration"></span>
-                                <div className="info">
+                                <div className="projectInfo">
                                     <div className="imgWrap">
                                         <figure 
                                         style={{
@@ -91,7 +91,7 @@ const Intro = () => {
                                 <h3>project04</h3>
                                 <span className="conerDecoration"></span>
                                 <span className="conerDecoration"></span>
-                                <div className="info">
+                                <div className="projectInfo">
                                     <div className="imgWrap">
                                         <figure 
                                         style={{
