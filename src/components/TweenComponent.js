@@ -22,12 +22,12 @@ const Mobile = ({ children }) => {
 const TweenComponent = () => {
     return (
         <Fragment>
-            <div className="section s1"></div>
-            <div id="trigger" className="trigger"></div>
+            <div className="section--before"></div>
+            <div id="intro__trigger--scroll" className="trigger"></div>
             <Desktop>
                 <Controller>
                     <Scene 
-                    triggerElement="#trigger"
+                    triggerElement="#intro__trigger--scroll"
                     duration={600}
                     >
                         {(progress) => (
@@ -43,12 +43,12 @@ const TweenComponent = () => {
                             totalProgress={progress}
                             paused
                             >
-                                <div className="colorBg"></div>
+                                <div className="bg--scroll-change"></div>
                             </Tween>
                         )}
                     </Scene>
                     <Scene
-                    triggerElement="#trigger"
+                    triggerElement="#intro__trigger--scroll"
                     duration={300}
                     >
                         {(progress) => (
@@ -64,7 +64,7 @@ const TweenComponent = () => {
                             totalProgress={progress}
                             paused
                             >
-                                <div id="shape01">
+                                <div id="bg--shape01">
                                     <div>
                                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1300 970">
                                             <g>
@@ -78,7 +78,7 @@ const TweenComponent = () => {
                         )}
                     </Scene>
                     <Scene
-                    triggerElement="#trigger"
+                    triggerElement="#intro__trigger--scroll"
                     duration={400}
                     >
                         {(progress) => (
@@ -94,7 +94,7 @@ const TweenComponent = () => {
                             totalProgress={progress}
                             paused
                             >
-                                <div id="shape02">
+                                <div id="bg--shape02">
                                     <div>
                                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1300 970">
                                             <g>
@@ -108,7 +108,7 @@ const TweenComponent = () => {
                         )}
                     </Scene>
                     <Scene 
-                    triggerElement="#trigger"
+                    triggerElement="#intro__trigger--scroll"
                     duration={600}
                     >
                         {(progress) => (
@@ -124,13 +124,13 @@ const TweenComponent = () => {
                             totalProgress={progress}
                             paused
                             >
-                                <div className="mainText">
-                                    <div className="shape">
+                                <div className="main-text">
+                                    <div className="main-text--shape">
                                         <h2>
                                             <span>Welcome to<br/> my world!</span>
                                         </h2>
                                     </div>
-                                    <div className="base">
+                                    <div className="main-text--base">
                                         <h2>
                                             <span>Welcome to<br/> my world!</span>
                                         </h2>
@@ -160,7 +160,7 @@ const TweenComponent = () => {
                             totalProgress={progress}
                             paused
                             >
-                                <div className="colorBg"></div>
+                                <div className="bg--scroll-change"></div>
                             </Tween>
                         )}
                     </Scene>
@@ -181,7 +181,7 @@ const TweenComponent = () => {
                             totalProgress={progress}
                             paused
                             >
-                                <div id="shape01">
+                                <div id="bg--shape01">
                                     <div>
                                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1300 970">
                                             <g>
@@ -211,7 +211,7 @@ const TweenComponent = () => {
                             totalProgress={progress}
                             paused
                             >
-                                <div id="shape02">
+                                <div id="bg--shape02">
                                     <div>
                                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1300 970">
                                             <g>
@@ -241,13 +241,13 @@ const TweenComponent = () => {
                             totalProgress={progress}
                             paused
                             >
-                                <div className="mainText">
-                                    <div className="shape">
+                                <div className="main-text">
+                                    <div className="main-text--shape">
                                         <h2>
                                             <span>Welcome to<br/> my world!</span>
                                         </h2>
                                     </div>
-                                    <div className="base">
+                                    <div className="main-text--base">
                                         <h2>
                                             <span>Welcome to<br/> my world!</span>
                                         </h2>
@@ -258,7 +258,7 @@ const TweenComponent = () => {
                     </Scene>
                 </Controller>
             </Mobile>
-            <div className="section s2"></div>
+            <div className="section--after"></div>
         </Fragment>
     );
 };

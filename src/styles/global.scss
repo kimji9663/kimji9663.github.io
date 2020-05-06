@@ -6,8 +6,8 @@
     - RESET
     - LAYOUT
         - HEADER
-        - NAV
-        - MAIN
+        - NAVIGATION
+        - CONTENTS
             - TOP INTRO
             - WORK
         - FOOTER
@@ -48,18 +48,18 @@ a {
     background: transparent;
     padding: ($padding + px) + ' ' + 0;
 
-    .sec01 {
+    .section--before {
         height: 110vh;
     }
-    .sec02 {
+    .section--after {
         height: 50vh;
     }
 
-    .trigger2 {
+    .trigger {
         position: relative;
     }
 
-    .titleWrap {
+    .title-wrap {
         position: fixed;
         top: 0;
         z-index: 1;
@@ -78,14 +78,14 @@ a {
         }
     }
 
-    .mainTitle {
+    .main-title {
         position: relative;
         margin: 0;
         padding-top: 2px;
         line-height: 1;
         font-size: $h1FontSize + rem;
 
-        &.blog {
+        &--blog {
             background-color: rgba(255, 255, 255, .8);
         }
 
@@ -101,8 +101,8 @@ a {
     }
 }
 
-/* NAV */
-nav {
+/* NAVIGATION */
+#navigation {
     position: absolute;
     top: 0;
     right: 0;
@@ -127,8 +127,12 @@ nav {
     }
 }
 
-/* MAIN */
-main {
+/* CONTENTS */
+#contents {
+    @mixin contentsBg($bg-color) {
+        background-color: $bg-color;
+    }
+
     position: relative;
     margin-top: -50px;
     background: {
@@ -137,156 +141,152 @@ main {
         attachment: fixed;
     }
 
-    @mixin mainBg($bgColor) {
-        background-color: $bgColor;
+    &.bg--portfolio {
+        @include contentsBg(#3d3d3d);
     }
 
-    &.mainBg {
-        @include mainBg(#3d3d3d);
-
-        .topIntro {
-            height: 80vh;
-            overflow: hidden;
-            color: #fff;
-            clip-path: polygon(0 0, 100% 0, 100% 100%, 0 90%);
-        }
+    .top-intro {
+        height: 80vh;
+        overflow: hidden;
+        color: #fff;
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 90%);
     }
 
-    &.subBg {
-        @include mainBg(#fff);
+    &.bg--blog {
+        @include contentsBg(#fff);
+    }
 
-        .blogTop {
-            padding: 100px 0 50px;
-            min-height: 300px;
-            background: rgb(206,234,255);
-            background: linear-gradient(180deg, rgba(206,234,255,1) 0%, rgba(255,255,255,1) 100%);
-            border-bottom: 1px solid #ccc;
-            text-align: center;
-        }
+    .blog-top {
+        padding: 100px 0 50px;
+        min-height: 300px;
+        border-bottom: 1px solid #ccc;
+        background: rgb(206,234,255);
+        background: linear-gradient(180deg, rgba(206,234,255,1) 0%, rgba(255,255,255,1) 100%);
+        text-align: center;
+    }
 
-        .listWrap {
-            margin-left: auto;
-            margin-right: auto;
-            max-width: 52rem;
-            padding: 5px 20px;
-            border: {
-                left: 1px solid #ccc;
-                right: 1px solid #ccc;
-            }
-            background: #fff;
+    .list-wrap {
+        margin: 0 auto;
+        padding: 5px 20px;
+        max-width: 832px;
+        border: {
+            left: 1px solid #ccc;
+            right: 1px solid #ccc;
         }
+        background: #fff;
 
         article {
-            padding: 15px;
             margin: 15px 0;
+            padding: 15px;
             border-radius: 15px;
-            box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.3);
             background: #fff;
+            box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.3);
+        }
+    
+        h3 {
+            margin-top: 0;
+        }
 
-            h3 {
-                margin-top: 0;
-            }
-
-            p {
-                margin-bottom: 0;
-            }
+        p {
+            margin-bottom: 0;
         }
     }
 }
 
 /* TOP INTRO */
-.topIntro {
+.top-intro {
 
     .inner {
-        position: relative;
         display: block;
+        position: relative;
         width: 100%;
         height: 100%;
-        text-align: center;
         background: {
             color: #129cff;
             size: cover;
             position: 50%;
             repeat: no-repeat;
         }
+        text-align: center;
+    }
 
-        .section {
-            height: 65vh;
+    .section--before,
+    .section--after {
+        height: 65vh;
+    }
+
+    .trigger {
+        height: 0;
+    }
+
+    .bg--scroll-change {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-color: #000;
+    }
+
+    .main-text {
+        position: relative;
+        top: 0;
+        max-width: 1300px;
+        width: 90%;
+        margin: auto;
+        text-align: left;
+        line-height: 1.5;
+
+        h2 {
+            margin: 60px 0 0 30px;
+            font-size: 40px;
+
+            @include breakpoint('tablet'){
+                font-size: 100px;
+                margin: 110px 0 0 70px;
+            }
+
+            @include breakpoint('desktop'){
+                font-size: 120px;
+                margin: 100px 0 0 100px;
+            }
         }
 
-        .trigger {
-            height: 0;
-        }
-
-        .colorBg {
+        &--shape {
             position: absolute;
-            top: 0;
-            right: 0;
-            bottom: 0;
-            left: 0;
-            background-color: #000;
+            top: -60px;
+            z-index: 2;
+            width: 180px;
+            height: 180px;
+            border-radius: 36% 64% 63% 37%/54% 60% 44% 48%;
+            overflow: hidden;
+            background-color: #1d39c1;
+            white-space: nowrap;
+            animation: 3s linear infinite slime;
+
+            @include breakpoint('tablet'){
+                top: -110px;
+                width: 370px;
+                height: 370px;
+            }
+
+            @include breakpoint('desktop'){
+                top: -100px;
+                width: 400px;
+                height: 400px;
+            }
+
+            span {
+                color: #61ffea;
+            }
         }
 
-        .mainText {
+        &--base {
             position: relative;
-            top: 0;
-            max-width: 1300px;
-            width: 90%;
-            margin: auto;
-            text-align: left;
-            line-height: 1.5;
-
-            h2 {
-                margin: 60px 0 0 30px;
-                font-size: 40px;
-
-                @include breakpoint('tablet'){
-                    font-size: 100px;
-                    margin: 110px 0 0 70px;
-                }
-
-                @include breakpoint('desktop'){
-                    font-size: 120px;
-                    margin: 100px 0 0 100px;
-                }
-            }
-
-            .shape {
-                position: absolute;
-                top: -60px;
-                z-index: 2;
-                width: 180px;
-                height: 180px;
-                border-radius: 36% 64% 63% 37%/54% 60% 44% 48%;
-                overflow: hidden;
-                background-color: #1d39c1;
-                white-space: nowrap;
-                animation: 3s linear infinite slime;
-
-                @include breakpoint('tablet'){
-                    top: -110px;
-                    width: 370px;
-                    height: 370px;
-                }
-
-                @include breakpoint('desktop'){
-                    top: -100px;
-                    width: 400px;
-                    height: 400px;
-                }
-
-                span {
-                    color: #61ffea;
-                }
-            }
-
-            .base {
-                position: relative;
-                z-index: 1;
-                
-                span {
-                    color: #fff
-                }
+            z-index: 1;
+            
+            span {
+                color: #fff
             }
         }
     }
@@ -323,7 +323,8 @@ main {
     }
 }
 
-.projectList {
+.project__list {
+
     ul {
         display: flex;
         flex-direction: column;
@@ -341,9 +342,6 @@ main {
         width: 100%;
         height: 100%;
         list-style: none;
-        
-        @include breakpoint('tablet') {
-        }
 
         &:nth-child(odd) {
 
@@ -351,7 +349,7 @@ main {
                 align-self: flex-start;
             }
 
-            .conerDecoration {
+            .coner-decoration {
                 top: 109px;
                 left: 0;
             }
@@ -364,7 +362,7 @@ main {
                 text-align: right;
             }
 
-            .conerDecoration {
+            .coner-decoration {
                 top: 109px;
                 right: 0;
             }
@@ -375,7 +373,7 @@ main {
         color: #fff;
     }
 
-    .conerDecoration {
+    .coner-decoration {
         position: absolute;
         background-color: #fff;
         
@@ -391,7 +389,7 @@ main {
     }
 }
 
-.projectInfo {
+.project__info {
     position: relative;
 
     > div {
@@ -399,7 +397,7 @@ main {
         vertical-align: top;
     }
 
-    .imgWrap {
+    .img__wrap {
         position: relative;
         top: 0;
         overflow: hidden;
@@ -429,14 +427,14 @@ main {
                     animation: over-opacity .3s ease-in-out .3s alternate forwards;
                 }
 
-                .btnWrap span {
+                .btn__wrap span {
                     opacity: 1;
                 }
             }
         }
     }
 
-    .btnWrap {
+    .btn__wrap {
         position: absolute;
         top: 0;
         left: 0;
@@ -519,7 +517,7 @@ main {
         }
     }
 
-    .textWrap {
+    .text__wrap {
         color: #fff;
 
         & > p {
@@ -530,7 +528,7 @@ main {
             }
         }
 
-        .pTitle {
+        .project__title {
             font-size: 40px;
         }
     }
@@ -553,7 +551,7 @@ main {
 
 /* SVG
 -------------------------------------------------*/
-#shape01 {
+#bg--shape01 {
     position: absolute;
     top: 0;
     left: 50%;
@@ -578,7 +576,7 @@ main {
     }
 }
 
-#shape02 {
+#bg--shape02 {
     position: absolute;
     top: 0;
     left: 50%;

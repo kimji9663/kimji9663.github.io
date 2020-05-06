@@ -6,7 +6,7 @@ const Intro = () => {
 
     return (
         <Fragment>
-            <div className="topIntro">
+            <div className="top-intro">
                 <div className="inner">
                     <TweenComponent></TweenComponent>
                 </div>
@@ -14,29 +14,29 @@ const Intro = () => {
             <div className="work">
                 <div className="inner">
                     <h2>WORK</h2>     
-                    <div className="projectList">                   
+                    <div className="project__list">                   
                         <ul>
                             <li>
                                 <h3>project01</h3>
-                                <span className="conerDecoration"></span>
-                                <span className="conerDecoration"></span>
-                                <div className="projectInfo">
-                                    <div className="imgWrap">
+                                <span className="coner-decoration"></span>
+                                <span className="coner-decoration"></span>
+                                <div className="project__info">
+                                    <div className="img__wrap">
                                         <figure 
                                         style={{
                                             backgroundImage: `url(${require("../images/home2-1600x865.jpg")})`,
                                             backgroundSize: `cover`
                                         }}
                                         />
-                                        <div className="btnWrap">
+                                        <div className="btn__wrap">
                                             <a href="/">
                                                 <span className="res">Responsive</span>
                                             </a>
                                         </div>
                                     </div>
-                                    <div className="textWrap">
+                                    <div className="text__wrap">
                                         <p>2018</p>
-                                        <p className="pTitle">eroundmall</p>
+                                        <p className="project__title">eroundmall</p>
                                         <p>
                                             <span className="html5">HTML5</span>
                                             <span className="css3">CSS3</span>
@@ -49,17 +49,17 @@ const Intro = () => {
                             </li>
                             <li>
                                 <h3>project02</h3>
-                                <span className="conerDecoration"></span>
-                                <span className="conerDecoration"></span>
-                                <div className="projectInfo">
-                                    <div className="imgWrap">
+                                <span className="coner-decoration"></span>
+                                <span className="coner-decoration"></span>
+                                <div className="project__info">
+                                    <div className="img__wrap">
                                         <figure 
                                         style={{
                                             backgroundImage: `url(${require("../images/img-project-eround.png")})`,
                                             backgroundSize: `cover`
                                         }}
                                         />
-                                        <div className="btnWrap">
+                                        <div className="btn__wrap">
                                             <a href="https://www.eroundmall.com/" target="_blank">
                                                 <span className="pc_m">PC / Mobile</span>
                                             </a>
@@ -69,17 +69,17 @@ const Intro = () => {
                             </li>
                             <li>
                                 <h3>project03</h3>
-                                <span className="conerDecoration"></span>
-                                <span className="conerDecoration"></span>
-                                <div className="projectInfo">
-                                    <div className="imgWrap">
+                                <span className="coner-decoration"></span>
+                                <span className="coner-decoration"></span>
+                                <div className="project__info">
+                                    <div className="img__wrap">
                                         <figure 
                                         style={{
                                             backgroundImage: `url(${require("../images/img-project-YIC.png")})`,
                                             backgroundSize: `cover`
                                         }}
                                         />
-                                        <div className="btnWrap">
+                                        <div className="btn__wrap">
                                             <a href="http://www.yic.co.kr/" target="_blank">
                                                 <span className="res">Responsive</span>
                                             </a>
@@ -89,17 +89,17 @@ const Intro = () => {
                             </li>
                             <li>
                                 <h3>project04</h3>
-                                <span className="conerDecoration"></span>
-                                <span className="conerDecoration"></span>
-                                <div className="projectInfo">
-                                    <div className="imgWrap">
+                                <span className="coner-decoration"></span>
+                                <span className="coner-decoration"></span>
+                                <div className="project__info">
+                                    <div className="img__wrap">
                                         <figure 
                                         style={{
                                             backgroundImage: `url(${require("../images/img-project-emh.png")})`,
                                             backgroundSize: `cover`
                                         }}
                                         />
-                                        <div className="btnWrap">
+                                        <div className="btn__wrap">
                                             <a href="http://www.emhsystem.com/" target="_blank">
                                                 <span className="pc_m">PC / Mobile</span>
                                             </a>

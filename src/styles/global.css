@@ -4,8 +4,8 @@
     - RESET
     - LAYOUT
         - HEADER
-        - NAV
-        - MAIN
+        - NAVIGATION
+        - CONTENTS
             - TOP INTRO
             - WORK
         - FOOTER
@@ -39,19 +39,19 @@ a {
   padding: 25px 0;
 }
 
-#header .sec01 {
+#header .section--before {
   height: 110vh;
 }
 
-#header .sec02 {
+#header .section--after {
   height: 50vh;
 }
 
-#header .trigger2 {
+#header .trigger {
   position: relative;
 }
 
-#header .titleWrap {
+#header .title-wrap {
   position: fixed;
   top: 0;
   z-index: 1;
@@ -63,15 +63,15 @@ a {
   transition: all 0.5s cubic-bezier(0.7, 0, 0.3, 1);
 }
 
-#header .titleWrap h1 {
+#header .title-wrap h1 {
   margin: 0;
 }
 
-#header .titleWrap a {
+#header .title-wrap a {
   color: #3d3e3d;
 }
 
-#header .mainTitle {
+#header .main-title {
   position: relative;
   margin: 0;
   padding-top: 2px;
@@ -79,11 +79,11 @@ a {
   font-size: 3rem;
 }
 
-#header .mainTitle.blog {
+#header .main-title--blog {
   background-color: rgba(255, 255, 255, 0.8);
 }
 
-#header .mainTitle ~ nav a {
+#header .main-title ~ nav a {
   -webkit-box-shadow: none;
           box-shadow: none;
   font-size: 0.6rem;
@@ -91,13 +91,13 @@ a {
 }
 
 @media (min-width: 1049px) {
-  #header .mainTitle ~ nav a {
+  #header .main-title ~ nav a {
     font-size: 1.2rem;
   }
 }
 
-/* NAV */
-nav {
+/* NAVIGATION */
+#navigation {
   position: absolute;
   top: 0;
   right: 0;
@@ -105,29 +105,29 @@ nav {
 }
 
 @media (min-width: 480px) {
-  nav {
+  #navigation {
     display: block;
   }
 }
 
-nav li {
+#navigation li {
   float: left;
   margin: 0 10px;
   list-style: none;
 }
 
 @media (min-width: 1049px) {
-  nav li {
+  #navigation li {
     margin: 0 20px;
   }
 }
 
-nav li .github {
+#navigation li .github {
   margin-top: 8px;
 }
 
-/* MAIN */
-main {
+/* CONTENTS */
+#contents {
   position: relative;
   margin-top: -50px;
   background-image: url(../images/bg-grid01.png);
@@ -135,11 +135,11 @@ main {
   background-attachment: fixed;
 }
 
-main.mainBg {
+#contents.bg--portfolio {
   background-color: #3d3d3d;
 }
 
-main.mainBg .topIntro {
+#contents .top-intro {
   height: 80vh;
   overflow: hidden;
   color: #fff;
@@ -147,69 +147,69 @@ main.mainBg .topIntro {
           clip-path: polygon(0 0, 100% 0, 100% 100%, 0 90%);
 }
 
-main.subBg {
+#contents.bg--blog {
   background-color: #fff;
 }
 
-main.subBg .blogTop {
+#contents .blog-top {
   padding: 100px 0 50px;
   min-height: 300px;
+  border-bottom: 1px solid #ccc;
   background: #ceeaff;
   background: -webkit-gradient(linear, left top, left bottom, from(#ceeaff), to(white));
   background: linear-gradient(180deg, #ceeaff 0%, white 100%);
-  border-bottom: 1px solid #ccc;
   text-align: center;
 }
 
-main.subBg .listWrap {
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 52rem;
+#contents .list-wrap {
+  margin: 0 auto;
   padding: 5px 20px;
+  max-width: 832px;
   border-left: 1px solid #ccc;
   border-right: 1px solid #ccc;
   background: #fff;
 }
 
-main.subBg article {
-  padding: 15px;
+#contents .list-wrap article {
   margin: 15px 0;
+  padding: 15px;
   border-radius: 15px;
+  background: #fff;
   -webkit-box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.3);
           box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.3);
-  background: #fff;
 }
 
-main.subBg article h3 {
+#contents .list-wrap h3 {
   margin-top: 0;
 }
 
-main.subBg article p {
+#contents .list-wrap p {
   margin-bottom: 0;
 }
 
 /* TOP INTRO */
-.topIntro .inner {
-  position: relative;
+.top-intro .inner {
   display: block;
+  position: relative;
   width: 100%;
   height: 100%;
-  text-align: center;
   background-color: #129cff;
   background-size: cover;
   background-position: 50%;
   background-repeat: no-repeat;
+  text-align: center;
 }
 
-.topIntro .inner .section {
+.top-intro .section--before,
+.top-intro .section--after {
   height: 65vh;
 }
 
-.topIntro .inner .trigger {
+.top-intro .trigger {
   height: 0;
 }
 
-.topIntro .inner .colorBg {
+.top-intro .bg--scroll-change {
   position: absolute;
   top: 0;
   right: 0;
@@ -218,7 +218,7 @@ main.subBg article p {
   background-color: #000;
 }
 
-.topIntro .inner .mainText {
+.top-intro .main-text {
   position: relative;
   top: 0;
   max-width: 1300px;
@@ -228,26 +228,26 @@ main.subBg article p {
   line-height: 1.5;
 }
 
-.topIntro .inner .mainText h2 {
+.top-intro .main-text h2 {
   margin: 60px 0 0 30px;
   font-size: 40px;
 }
 
 @media (min-width: 778px) {
-  .topIntro .inner .mainText h2 {
+  .top-intro .main-text h2 {
     font-size: 100px;
     margin: 110px 0 0 70px;
   }
 }
 
 @media (min-width: 1049px) {
-  .topIntro .inner .mainText h2 {
+  .top-intro .main-text h2 {
     font-size: 120px;
     margin: 100px 0 0 100px;
   }
 }
 
-.topIntro .inner .mainText .shape {
+.top-intro .main-text--shape {
   position: absolute;
   top: -60px;
   z-index: 2;
@@ -262,7 +262,7 @@ main.subBg article p {
 }
 
 @media (min-width: 778px) {
-  .topIntro .inner .mainText .shape {
+  .top-intro .main-text--shape {
     top: -110px;
     width: 370px;
     height: 370px;
@@ -270,23 +270,23 @@ main.subBg article p {
 }
 
 @media (min-width: 1049px) {
-  .topIntro .inner .mainText .shape {
+  .top-intro .main-text--shape {
     top: -100px;
     width: 400px;
     height: 400px;
   }
 }
 
-.topIntro .inner .mainText .shape span {
+.top-intro .main-text--shape span {
   color: #61ffea;
 }
 
-.topIntro .inner .mainText .base {
+.top-intro .main-text--base {
   position: relative;
   z-index: 1;
 }
 
-.topIntro .inner .mainText .base span {
+.top-intro .main-text--base span {
   color: #fff;
 }
 
@@ -327,7 +327,7 @@ main.subBg article p {
   }
 }
 
-.projectList ul {
+.project__list ul {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -342,13 +342,13 @@ main.subBg article p {
 }
 
 @media (min-width: 778px) {
-  .projectList ul {
+  .project__list ul {
     -ms-flex-item-align: start;
         align-self: flex-start;
   }
 }
 
-.projectList li {
+.project__list li {
   position: relative;
   margin-bottom: 7%;
   width: 100%;
@@ -357,59 +357,59 @@ main.subBg article p {
 }
 
 @media (min-width: 778px) {
-  .projectList li:nth-child(odd) {
+  .project__list li:nth-child(odd) {
     -ms-flex-item-align: start;
         align-self: flex-start;
   }
 }
 
-.projectList li:nth-child(odd) .conerDecoration {
+.project__list li:nth-child(odd) .coner-decoration {
   top: 109px;
   left: 0;
 }
 
 @media (min-width: 778px) {
-  .projectList li:nth-child(even) {
+  .project__list li:nth-child(even) {
     -ms-flex-item-align: end;
         align-self: flex-end;
     text-align: right;
   }
 }
 
-.projectList li:nth-child(even) .conerDecoration {
+.project__list li:nth-child(even) .coner-decoration {
   top: 109px;
   right: 0;
 }
 
-.projectList h3 {
+.project__list h3 {
   color: #fff;
 }
 
-.projectList .conerDecoration {
+.project__list .coner-decoration {
   position: absolute;
   background-color: #fff;
 }
 
-.projectList .conerDecoration:nth-of-type(1) {
+.project__list .coner-decoration:nth-of-type(1) {
   width: 50px;
   height: 15px;
 }
 
-.projectList .conerDecoration:nth-of-type(2) {
+.project__list .coner-decoration:nth-of-type(2) {
   width: 15px;
   height: 40px;
 }
 
-.projectInfo {
+.project__info {
   position: relative;
 }
 
-.projectInfo > div {
+.project__info > div {
   display: inline-block;
   vertical-align: top;
 }
 
-.projectInfo .imgWrap {
+.project__info .img__wrap {
   position: relative;
   top: 0;
   overflow: hidden;
@@ -421,7 +421,7 @@ main.subBg article p {
   transition: all .2s ease 0s;
 }
 
-.projectInfo .imgWrap figure {
+.project__info .img__wrap figure {
   position: absolute;
   top: 0;
   width: 100%;
@@ -431,25 +431,25 @@ main.subBg article p {
 }
 
 @media (min-width: 1049px) {
-  .projectInfo .imgWrap:hover {
+  .project__info .img__wrap:hover {
     -webkit-transform: scale(0.9);
             transform: scale(0.9);
     -webkit-animation: over-dim .3s ease-in-out .3s alternate forwards;
             animation: over-dim .3s ease-in-out .3s alternate forwards;
   }
-  .projectInfo .imgWrap:hover figure {
+  .project__info .img__wrap:hover figure {
     top: 50px;
     -webkit-transform: scale(1.3);
             transform: scale(1.3);
     -webkit-animation: over-opacity .3s ease-in-out .3s alternate forwards;
             animation: over-opacity .3s ease-in-out .3s alternate forwards;
   }
-  .projectInfo .imgWrap:hover .btnWrap span {
+  .project__info .img__wrap:hover .btn__wrap span {
     opacity: 1;
   }
 }
 
-.projectInfo .btnWrap {
+.project__info .btn__wrap {
   position: absolute;
   top: 0;
   left: 0;
@@ -460,14 +460,14 @@ main.subBg article p {
 }
 
 @media (min-width: 1049px) {
-  .projectInfo .btnWrap {
+  .project__info .btn__wrap {
     top: 50%;
     margin-top: -23px;
     height: auto;
   }
 }
 
-.projectInfo .btnWrap a {
+.project__info .btn__wrap a {
   display: block;
   width: 100%;
   height: 100%;
@@ -476,14 +476,14 @@ main.subBg article p {
 }
 
 @media (min-width: 1049px) {
-  .projectInfo .btnWrap a {
+  .project__info .btn__wrap a {
     display: inline;
     width: auto;
     height: auto;
   }
 }
 
-.projectInfo .btnWrap span {
+.project__info .btn__wrap span {
   display: none;
   position: relative;
   overflow: hidden;
@@ -502,7 +502,7 @@ main.subBg article p {
   transition: .5s ease all;
 }
 
-.projectInfo .btnWrap span:before {
+.project__info .btn__wrap span:before {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -518,46 +518,46 @@ main.subBg article p {
   content: '';
 }
 
-.projectInfo .btnWrap span:after {
+.project__info .btn__wrap span:after {
   position: relative;
   font-size: 22px;
 }
 
-.projectInfo .btnWrap span.res:after {
+.project__info .btn__wrap span.res:after {
   content: 'Responsive';
 }
 
-.projectInfo .btnWrap span.pc_m:after {
+.project__info .btn__wrap span.pc_m:after {
   content: 'PC / Mobile';
 }
 
-.projectInfo .btnWrap span.mob:after {
+.project__info .btn__wrap span.mob:after {
   content: 'Mobile';
 }
 
 @media (min-width: 1049px) {
-  .projectInfo .btnWrap span {
+  .project__info .btn__wrap span {
     display: inline-block;
   }
-  .projectInfo .btnWrap span:hover:before {
+  .project__info .btn__wrap span:hover:before {
     -webkit-transform: scale(1);
             transform: scale(1);
   }
 }
 
-.projectInfo .textWrap {
+.project__info .text__wrap {
   color: #fff;
 }
 
-.projectInfo .textWrap > p {
+.project__info .text__wrap > p {
   margin: 0 0 10px 50px;
 }
 
-.projectInfo .textWrap > p:last-child {
+.project__info .text__wrap > p:last-child {
   margin-bottom: 0;
 }
 
-.projectInfo .textWrap .pTitle {
+.project__info .text__wrap .project__title {
   font-size: 40px;
 }
 
@@ -582,7 +582,7 @@ main.subBg article p {
 
 /* SVG
 -------------------------------------------------*/
-#shape01 {
+#bg--shape01 {
   position: absolute;
   top: 0;
   left: 50%;
@@ -592,14 +592,14 @@ main.subBg article p {
 }
 
 @media (min-width: 778px) {
-  #shape01 {
+  #bg--shape01 {
     width: 1300px;
     -webkit-transform: translate(-600px, -50%);
             transform: translate(-600px, -50%);
   }
 }
 
-#shape01 .svg {
+#bg--shape01 .svg {
   width: 100%;
   height: 100%;
   overflow: hidden;
@@ -610,7 +610,7 @@ main.subBg article p {
   left: 0;
 }
 
-#shape02 {
+#bg--shape02 {
   position: absolute;
   top: 0;
   left: 50%;
@@ -620,14 +620,14 @@ main.subBg article p {
 }
 
 @media (min-width: 778px) {
-  #shape02 {
+  #bg--shape02 {
     width: 1200px;
     -webkit-transform: translate(-350px, 40%);
             transform: translate(-350px, 40%);
   }
 }
 
-#shape02 .svg {
+#bg--shape02 .svg {
   overflow: hidden;
   position: absolute;
   top: 0;

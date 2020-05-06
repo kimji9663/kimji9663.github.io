@@ -12,11 +12,11 @@ const Layout = ({ location, title, children }) => {
   if (location.pathname === rootPath) {
     header = (
       <header id="header">
-        <div className="sec01"></div>
-        <div id="trigger2" className="trigger2"></div>
+        <div className="section--before"></div>
+        <div id="header__trigger--scroll" className="trigger"></div>
         <Controller>
           <Scene 
-           triggerElement="#trigger2"
+           triggerElement="#header__trigger--scroll"
            duration={1}
           >
             {(progress) => (
@@ -32,8 +32,8 @@ const Layout = ({ location, title, children }) => {
                 totalProgress={progress}
                 paused
                 >
-                    <div className="titleWrap">
-                    <h1 className="mainTitle portfolio">
+                    <div className="title-wrap">
+                    <h1 className="main-title main-title--portfolio">
                       <Link
                         style={{
                           boxShadow: `none`,
@@ -44,7 +44,7 @@ const Layout = ({ location, title, children }) => {
                         {title}
                       </Link>
                     </h1>
-                      <nav>
+                      <nav id="navigation">
                         <ul>
                           <li>
                             <Link to={`/`}>
@@ -70,17 +70,17 @@ const Layout = ({ location, title, children }) => {
             )}
           </Scene>
         </Controller>
-        <div className="sec02"></div>
+        <div className="section--after"></div>
       </header>
     )
     main = (
-      <main className="mainBg">{children}</main>
+      <main id="contents" className="bg--portfolio">{children}</main>
     )
   } else {
     header = (
       <header id="header">
-        <div className="titleWrap">
-          <h1 className="mainTitle blog">
+        <div className="title-wrap">
+          <h1 className="main-title main-title--blog">
             <Link
               style={{
                 boxShadow: `none`,
@@ -91,7 +91,7 @@ const Layout = ({ location, title, children }) => {
               {title}
             </Link>
           </h1>
-          <nav>
+          <nav id="navigation">
             <ul>
               <li>
                 <Link to={`/`}>
@@ -116,7 +116,7 @@ const Layout = ({ location, title, children }) => {
       </header>
     )
     main = (
-      <main className="subBg">{children}</main>
+      <main id="contents" className="bg--blog">{children}</main>
     )
   }
 
