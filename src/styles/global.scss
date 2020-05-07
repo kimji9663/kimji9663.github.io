@@ -347,6 +347,10 @@ a {
 
             @include breakpoint('tablet'){
                 align-self: flex-start;
+                
+                .project__info > div {
+                    float: left;
+                }
             }
 
             .coner-decoration {
@@ -360,6 +364,10 @@ a {
             @include breakpoint('tablet'){
                 align-self: flex-end;
                 text-align: right;
+
+                .project__info > div {
+                    float: right;
+                }
             }
 
             .coner-decoration {
@@ -520,16 +528,25 @@ a {
     .text__wrap {
         color: #fff;
 
-        & > p {
-            margin: 0 0 10px 50px;
+        > p {
+            margin: 0 0 0 50px;
+            line-height: 1.5;
 
             &:last-child {
                 margin-bottom: 0;
             }
         }
+        .project__year {
 
+        }
         .project__title {
             font-size: 40px;
+        }
+        .tag__language > span {
+            margin: 0 4px;
+            background: #ccc;
+            border-radius: 3px;
+            padding: 2px 5px;
         }
     }
 }

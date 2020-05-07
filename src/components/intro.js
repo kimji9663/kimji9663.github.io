@@ -35,9 +35,9 @@ const Intro = () => {
                                         </div>
                                     </div>
                                     <div className="text__wrap">
-                                        <p>2018</p>
+                                        <p className="project__year">2018</p>
                                         <p className="project__title">eroundmall</p>
-                                        <p>
+                                        <p className="tag__language">
                                             <span className="html5">HTML5</span>
                                             <span className="css3">CSS3</span>
                                             <span className="javascript">javascript</span>
@@ -65,6 +65,17 @@ const Intro = () => {
                                             </a>
                                         </div>
                                     </div>
+                                    <div className="text__wrap">
+                                        <p className="project__year">2018</p>
+                                        <p className="project__title">eroundmall</p>
+                                        <p className="tag__language">
+                                            <span className="html5">HTML5</span>
+                                            <span className="css3">CSS3</span>
+                                            <span className="javascript">javascript</span>
+                                            <span className="jquery">jQuery</span>
+                                            <span className="react">react</span>
+                                        </p>
+                                    </div>
                                 </div>
                             </li>
                             <li>
@@ -85,6 +96,17 @@ const Intro = () => {
                                             </a>
                                         </div>
                                     </div>
+                                    <div className="text__wrap">
+                                        <p className="project__year">2018</p>
+                                        <p className="project__title">eroundmall</p>
+                                        <p className="tag__language">
+                                            <span className="html5">HTML5</span>
+                                            <span className="css3">CSS3</span>
+                                            <span className="javascript">javascript</span>
+                                            <span className="jquery">jQuery</span>
+                                            <span className="react">react</span>
+                                        </p>
+                                    </div>
                                 </div>
                             </li>
                             <li>
@@ -104,6 +126,17 @@ const Intro = () => {
                                                 <span className="pc_m">PC / Mobile</span>
                                             </a>
                                         </div>
+                                    </div>
+                                    <div className="text__wrap">
+                                        <p className="project__year">2018</p>
+                                        <p className="project__title">eroundmall</p>
+                                        <p className="tag__language">
+                                            <span className="html5">HTML5</span>
+                                            <span className="css3">CSS3</span>
+                                            <span className="javascript">javascript</span>
+                                            <span className="jquery">jQuery</span>
+                                            <span className="react">react</span>
+                                        </p>
                                     </div>
                                 </div>
                             </li>

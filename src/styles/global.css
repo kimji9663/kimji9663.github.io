@@ -361,6 +361,9 @@ a {
     -ms-flex-item-align: start;
         align-self: flex-start;
   }
+  .project__list li:nth-child(odd) .project__info > div {
+    float: left;
+  }
 }
 
 .project__list li:nth-child(odd) .coner-decoration {
@@ -373,6 +376,9 @@ a {
     -ms-flex-item-align: end;
         align-self: flex-end;
     text-align: right;
+  }
+  .project__list li:nth-child(even) .project__info > div {
+    float: right;
   }
 }
 
@@ -550,7 +556,8 @@ a {
 }
 
 .project__info .text__wrap > p {
-  margin: 0 0 10px 50px;
+  margin: 0 0 0 50px;
+  line-height: 1.5;
 }
 
 .project__info .text__wrap > p:last-child {
@@ -559,6 +566,13 @@ a {
 
 .project__info .text__wrap .project__title {
   font-size: 40px;
+}
+
+.project__info .text__wrap .tag__language > span {
+  margin: 0 4px;
+  background: #ccc;
+  border-radius: 3px;
+  padding: 2px 5px;
 }
 
 /* FOOTER */
