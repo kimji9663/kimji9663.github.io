@@ -1,6 +1,5 @@
 import React, {Fragment} from 'react';
 import TweenComponent from './TweenComponent';
-import { Link } from 'gatsby';
 
 const Intro = () => {
 
@@ -29,20 +28,20 @@ const Intro = () => {
                                         }}
                                         />
                                         <div className="btn__wrap">
-                                            <a href="/">
+                                            <a href="http://kimji9663.netlify.com/">
                                                 <span className="res">Responsive</span>
                                             </a>
                                         </div>
                                     </div>
                                     <div className="text__wrap">
-                                        <p>2018</p>
-                                        <p className="project__title">eroundmall</p>
-                                        <p>
-                                            <span className="html5">HTML5</span>
-                                            <span className="css3">CSS3</span>
+                                        <p className="project__year">2020</p>
+                                        <p className="project__title">Portfolio&amp;Blog</p>
+                                        <p className="tag__language">
+                                            <span className="html">HTML5</span>
+                                            <span className="sass">SASS</span>
                                             <span className="javascript">javascript</span>
-                                            <span className="jquery">jQuery</span>
-                                            <span className="react">react</span>
+                                            <span className="none">React</span>
+                                            <span className="none">Gatsby</span>
                                         </p>
                                     </div>
                                 </div>
@@ -55,15 +54,24 @@ const Intro = () => {
                                     <div className="img__wrap">
                                         <figure 
                                         style={{
-                                            backgroundImage: `url(${require("../images/img-project-eround.png")})`,
+                                            backgroundImage: `url(${require("../images/img-project-emh.png")})`,
                                             backgroundSize: `cover`
                                         }}
                                         />
                                         <div className="btn__wrap">
-                                            <a href="https://www.eroundmall.com/" target="_blank">
-                                                <span className="pc_m">PC / Mobile</span>
+                                            <a href="http://www.emhsystem.com/" target="_blank">
+                                                <span className="res">Responsive</span>
                                             </a>
                                         </div>
+                                    </div>
+                                    <div className="text__wrap">
+                                        <p className="project__year">2019</p>
+                                        <p className="project__title">EMH system</p>
+                                        <p className="tag__language">
+                                            <span className="html">HTML5</span>
+                                            <span className="css">CSS3</span>
+                                            <span className="javascript">jQuery</span>
+                                        </p>
                                     </div>
                                 </div>
                             </li>
@@ -85,6 +93,17 @@ const Intro = () => {
                                             </a>
                                         </div>
                                     </div>
+                                    <div className="text__wrap">
+                                        <p className="project__year">2019</p>
+                                        <p className="project__title">YICcompany</p>
+                                        <p className="tag__language">
+                                            <span className="html">HTML5</span>
+                                            <span className="css">CSS3</span>
+                                            <span className="javascript">jQuery</span>
+                                            <span className="none">Wordpress</span>
+                                            <span className="none">Bootstrap</span>
+                                        </p>
+                                    </div>
                                 </div>
                             </li>
                             <li>
@@ -95,15 +114,24 @@ const Intro = () => {
                                     <div className="img__wrap">
                                         <figure 
                                         style={{
-                                            backgroundImage: `url(${require("../images/img-project-emh.png")})`,
+                                            backgroundImage: `url(${require("../images/img-project-eround.png")})`,
                                             backgroundSize: `cover`
                                         }}
                                         />
                                         <div className="btn__wrap">
-                                            <a href="http://www.emhsystem.com/" target="_blank">
+                                            <a href="https://www.eroundmall.com/" target="_blank">
                                                 <span className="pc_m">PC / Mobile</span>
                                             </a>
                                         </div>
+                                    </div>
+                                    <div className="text__wrap">
+                                        <p className="project__year">2018</p>
+                                        <p className="project__title">eroundmall</p>
+                                        <p className="tag__language">
+                                            <span className="html">HTML5</span>
+                                            <span className="css">CSS3</span>
+                                            <span className="javascript">jQuery</span>
+                                        </p>
                                     </div>
                                 </div>
                             </li>

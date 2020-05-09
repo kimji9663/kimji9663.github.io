@@ -26,7 +26,7 @@ const Layout = ({ location, title, children }) => {
                 ease: 'linear'}
                 }
                 to={{
-                css: {background: 'rgba(255,255,255,.5)', borderBottom: 'none'},
+                css: {background: 'rgba(255,255,255,.5)', borderBottom: 'none', overflow: 'hidden'},
                 ease: 'linear'}
                 }
                 totalProgress={progress}

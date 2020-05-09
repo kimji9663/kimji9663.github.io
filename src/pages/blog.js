@@ -15,7 +15,7 @@ const BlogIndex = ({ data, location }) => {
       <div className="blog-top">
         <Bio></Bio>
       </div>
-      <div className="list-wrap">
+      <div className="list__wrap">
         {posts.map(({ node }) => {
           const title = node.frontmatter.title || node.fields.slug
           return (
