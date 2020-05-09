@@ -30,6 +30,8 @@ a {
 /*** LAYOUT
 -------------------------------------------------*/
 /* PRIMARY */
+/* BUTTON */
+/* ellipsis */
 /* HEADER */
 #header {
   position: relative;
@@ -155,6 +157,7 @@ a {
 
 #contents.bg--blog {
   background-color: #fff;
+  padding-top: 1px;
 }
 
 #contents .blog-top {
@@ -198,8 +201,61 @@ a {
   border-left: 1px solid #ccc;
   border-right: 1px solid #ccc;
   background: #fff;
-  margin: 50px auto 0;
+  margin: 70px auto 0;
   padding: 5px 30px;
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  border-radius: 20px;
+}
+
+#contents .other-post {
+  padding: 20px 10px;
+  background: rgba(255, 255, 255, 0.8);
+}
+
+@media (min-width: 1049px) {
+  #contents .other-post {
+    padding: 20px 0;
+  }
+}
+
+#contents .other-post ul {
+  list-style: none;
+  margin: auto;
+  max-width: 832px;
+}
+
+#contents .other-post li {
+  margin: 0;
+  height: 30px;
+}
+
+#contents .other-post span {
+  font-size: 20px;
+  vertical-align: text-bottom;
+}
+
+#contents .other-post .prev {
+  letter-spacing: 0.6px;
+  vertical-align: text-bottom;
+}
+
+#contents .other-post a {
+  font-size: 15px;
+  width: 80%;
+  display: inline-block;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  color: #119cff;
+  -webkit-transition: .3s ease all;
+  transition: .3s ease all;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+#contents .other-post a:hover {
+  color: #56b9ff;
 }
 
 /* TOP INTRO */
@@ -697,12 +753,12 @@ a {
 }
 
 .project__info .text__wrap .addr__repo > a {
-  display: inline-block;
   margin-bottom: 15px;
+  font-size: 20px;
+  display: inline-block;
   -webkit-box-shadow: none;
           box-shadow: none;
   color: #119cff;
-  font-size: 20px;
   -webkit-transition: .3s ease all;
   transition: .3s ease all;
 }
