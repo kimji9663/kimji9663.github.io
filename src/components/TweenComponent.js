@@ -7,7 +7,7 @@
 
 import React, {Fragment} from 'react';
 import { Controller, Scene } from 'react-scrollmagic';
-import { Tween, Timeline } from 'react-gsap';
+import { Tween } from 'react-gsap';
 import { useMediaQuery } from 'react-responsive'
 
 const Desktop = ({ children }) => {

@@ -31,10 +31,13 @@ a {
 
 /*** LAYOUT
 -------------------------------------------------*/
+/* PRIMARY */
+$primaryColor: #1d39c1;
+$secondaryColor: #119cff;
+
 /* HEADER */
 #header {
     $padding: 25;
-    $FontColor: #3d3e3d;
     $h1FontSize: 3;
     $h3FontSize: 1.5;
     @function fontsizeToPx($n) {
@@ -66,7 +69,7 @@ a {
         width: 100%;
         height: ($padding * 2) + px;
         opacity: 1;
-        border-bottom: 1px solid $FontColor;
+        border-bottom: 1px solid #3d3e3d;
         transition: all .5s cubic-bezier(.7,0,.3,1);
 
         h1 {
@@ -74,7 +77,7 @@ a {
         }
 
         a {
-            color: $FontColor;
+            color: #3d3e3d;
         }
     }
 
@@ -85,13 +88,18 @@ a {
         line-height: 1;
         font-size: $h1FontSize + rem;
 
-        &--blog {
-            background-color: rgba(255, 255, 255, .8);
+        &--portfolio {
+            color: #fff;
         }
 
-        & ~ nav a {
+        &--blog {
+            background-color: rgba(255, 255, 255, .8);
+            color: #3d3e3d;
+        }
+
+        & ~ #navigation a {
             box-shadow: none;
-            font-size: $h1FontSize/2/2.5 + rem;
+            font-size: $h1FontSize/2.5 + rem;
             line-height: ($padding * 2) + px;
 
             @include breakpoint('desktop'){
@@ -104,11 +112,11 @@ a {
 /* NAVIGATION */
 #navigation {
     position: absolute;
-    top: 0;
+    top: 50px;
     right: 0;
-    display: none;
                         
     @include breakpoint('ftablet'){
+        top: 0;
         display: block;
     }
 
@@ -165,15 +173,20 @@ a {
         text-align: center;
     }
 
-    .list-wrap {
-        margin: 0 auto;
-        padding: 5px 20px;
+    @mixin blogWrap() {
         max-width: 832px;
         border: {
             left: 1px solid #ccc;
             right: 1px solid #ccc;
         }
         background: #fff;
+    }
+
+    .list__wrap {
+        @include blogWrap;
+
+        margin: 0 auto;
+        padding: 5px 20px;
 
         article {
             margin: 15px 0;
@@ -190,6 +203,13 @@ a {
         p {
             margin-bottom: 0;
         }
+    }
+
+    .view__wrap {
+        @include blogWrap;
+
+        margin: 50px auto 0;
+        padding: 5px 30px;
     }
 }
 
@@ -260,7 +280,7 @@ a {
             height: 180px;
             border-radius: 36% 64% 63% 37%/54% 60% 44% 48%;
             overflow: hidden;
-            background-color: #1d39c1;
+            background-color: $primaryColor;
             white-space: nowrap;
             animation: 3s linear infinite slime;
 
@@ -347,9 +367,16 @@ a {
 
             @include breakpoint('tablet'){
                 align-self: flex-start;
+            }
+
+            @include breakpoint('desktop') {
                 
                 .project__info > div {
                     float: left;
+                }
+
+                .text__wrap {
+                    margin-left: 50px;
                 }
             }
 
@@ -364,9 +391,20 @@ a {
             @include breakpoint('tablet'){
                 align-self: flex-end;
                 text-align: right;
+                
+                .btn__wrap span {
+                    right: auto;
+                    left: 0;
+                }
+            }
 
+            @include breakpoint('desktop') {
                 .project__info > div {
                     float: right;
+                }
+
+                .text__wrap {
+                    margin-right: 50px;
                 }
             }
 
@@ -399,19 +437,21 @@ a {
 
 .project__info {
     position: relative;
-
-    > div {
-        display: inline-block;
-        vertical-align: top;
+    
+    @include breakpoint('desktop') {
+        > div {
+            vertical-align: top;
+        }
     }
 
     .img__wrap {
+        display: inline-block;
         position: relative;
         top: 0;
-        overflow: hidden;
-        padding-bottom: 38%;
+        overflow: visible;
+        padding-bottom: 62%;
         max-width: 800px;
-        width: 60%;
+        width: 100%;
         height: auto;
         transition: all .2s ease 0s;
 
@@ -423,7 +463,13 @@ a {
             transition: all .5s ease-out 0s;
         }
 
+        @include breakpoint('tablet'){
+            padding-bottom: 38%;
+            width: 60%;
+        }
+
         @include breakpoint('desktop'){
+            overflow: hidden;
 
             &:hover {
                 transform: scale(.9);
@@ -471,20 +517,21 @@ a {
         }
 
         span {
-            display: none;
-            position: relative;
+            display: inline-block;
             overflow: hidden;
-            margin: 0 10px;
-            padding: 12px 20px 8px;
-            min-width: 140px;
+            position: absolute;
+            right: 0;
+            bottom: -36px;
+            padding: 5px 10px 6px;
+            min-width: 100px;
             border-radius: 10px;
-            background: #119cff;
+            background: $secondaryColor;
             color: #fff;
             font-family: sans-serif;
             font-size: 0;
             line-height: 1;
             text-align: center;
-            opacity: 0;
+            opacity: 1;
             transition: .5s ease all;
 
             &:before {
@@ -503,7 +550,7 @@ a {
 
             &:after {
                 position: relative;
-                font-size: 22px;
+                font-size: 15px;
             }
 
             &.res:after {
@@ -517,7 +564,18 @@ a {
             }
 
             @include breakpoint('desktop'){
+                position: relative;
+                right: auto;
+                bottom: auto;
                 display: inline-block;
+                padding: 12px 20px 8px;
+                min-width: 140px;
+                opacity: 0;
+
+                &:after {
+                    font-size: 22px;
+                }
+
                 &:hover:before {
                     transform: scale(1);
                 }
@@ -528,25 +586,88 @@ a {
     .text__wrap {
         color: #fff;
 
+        @include breakpoint('desktop') {
+            display: inline-block;
+            vertical-align: top;
+        }
+
         > p {
-            margin: 0 0 0 50px;
+            margin: 0;
             line-height: 1.5;
-
-            &:last-child {
-                margin-bottom: 0;
-            }
         }
+
         .project__year {
-
+            color: $primaryColor;
+            opacity: 0.5;
+            font-size: 70px;
+            font-weight: 800;
+            line-height: 1;
         }
+        
         .project__title {
             font-size: 40px;
+            font-weight: 100;
+        }
+
+        .tag__language {
+            margin-top: 10px;
+            font-size: 12px;
+
+            @include breakpoint('tablet') {
+                font-size: 15px;
+            }
+
+            @mixin tagStyle {
+                display: inline-block;
+                margin: 0 3px 6px;
+                padding: 2px 6px;
+                border-radius: 5px;
+                color: #fff;
+            }
+
+            .none {
+                @include tagStyle;
+                background: #777;
+            }
+
+            .html {
+                @include tagStyle;
+                background : #f67925; 
+            }
+
+            .css {
+                @include tagStyle;
+                background : #008ed8; 
+            }
+
+            .sass {
+                @include tagStyle; 
+                background: #f754a6; 
+            }
+
+            .javascript { 
+                @include tagStyle;
+                background: #f7df1e; 
+            }
         }
         .tag__language > span {
             margin: 0 4px;
             background: #ccc;
             border-radius: 3px;
             padding: 2px 5px;
+        }
+        
+        .addr__repo > a {
+            display: inline-block;
+            margin-bottom: 15px;
+            box-shadow: none;
+            color: $secondaryColor;
+            font-size: 20px;
+            transition: .3s ease all;
+
+            &:hover {
+                color: #56b9ff;
+            }
         }
     }
 }
@@ -663,20 +784,20 @@ a {
         &[class="language-css"]::before {
             content: "css";
             color: #ffffff;
-            background: rgb(255, 152, 0);
+            background: #008ed8;
         }
         &[class="language-scss"]::before {
             content: "scss";
             color: #ffffff;
-            background: rgb(247, 84, 166);
+            background: #f754a6;
         }
         &[class="language-javascript"]::before {
             content: "js";
-            background: rgb(247, 223, 30);
+            background: #f7df1e;
         }
         &[class="language-jsx"]::before {
             content: "jsx";
-            background: rgb(97, 218, 251);
+            background: #61dafb;
         }
 
         code {
