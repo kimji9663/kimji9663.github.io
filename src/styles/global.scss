@@ -728,6 +728,11 @@ $secondaryColor: #119cff;
             font-size: 20px;
             @include linkStyle;
         }
+
+        .project__ctrb {
+            margin-top: 15px;
+            color: #e6e6e6;
+        }
     }
 }
 

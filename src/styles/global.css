@@ -767,6 +767,11 @@ a {
   color: #56b9ff;
 }
 
+.project__info .text__wrap .project__ctrb {
+  margin-top: 15px;
+  color: #e6e6e6;
+}
+
 /* FOOTER */
 #footer {
   padding: 32px;

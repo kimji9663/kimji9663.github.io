@@ -46,6 +46,7 @@ const Intro = () => {
                                             <span className="none">React</span>
                                             <span className="none">Gatsby</span>
                                         </p>
+                                        <p className="project__ctrb">Publishing 100%</p>
                                     </div>
                                 </div>
                             </li>
@@ -75,6 +76,7 @@ const Intro = () => {
                                             <span className="css">CSS3</span>
                                             <span className="javascript">jQuery</span>
                                         </p>
+                                        <p className="project__ctrb">Publishing 80%</p>
                                     </div>
                                 </div>
                             </li>
@@ -106,6 +108,7 @@ const Intro = () => {
                                             <span className="none">Wordpress</span>
                                             <span className="none">Bootstrap</span>
                                         </p>
+                                        <p className="project__ctrb">Publishing 100%</p>
                                     </div>
                                 </div>
                             </li>
@@ -135,6 +138,7 @@ const Intro = () => {
                                             <span className="css">CSS3</span>
                                             <span className="javascript">jQuery</span>
                                         </p>
+                                        <p className="project__ctrb">Publishing 50%</p>
                                     </div>
                                 </div>
                             </li>
