@@ -1,3 +1,13 @@
+@font-face {
+  font-family: 'Montserrat';
+  src: url("../font/Montserrat-Black.ttf"), format("truetype");
+}
+
+@font-face {
+  font-family: 'Merriweather';
+  src: url("../font/Merriweather-Black.ttf"), format("truetype");
+}
+
 /* TABLE OF CONTENTS
 -------------------------------------------------*/
 /*
@@ -7,7 +17,7 @@
         - NAVIGATION
         - CONTENTS
             - TOP INTRO
-            - WORK
+            - WORK,
         - FOOTER
     - SVG
     - ANIMATION
@@ -72,7 +82,7 @@ a {
   height: 0;
   background: transparent;
   padding: 25px 0;
-  font-family: Montserrat,sans-serif;
+  font-family: 'Montserrat', sans-serif;
 }
 
 #header .section--before {
@@ -101,17 +111,16 @@ a {
 
 #header .title-wrap h1 {
   margin: 0;
-  font-family: Montserrat,sans-serif;
 }
 
 #header .title-wrap a {
-  color: #3d3e3d;
+  color: #020a02;
 }
 
 #header .main-title {
   position: relative;
   margin: 0;
-  padding-top: 2px;
+  padding-top: 0;
   line-height: 1;
   font-size: 3rem;
 }
@@ -335,7 +344,9 @@ a {
 
 .top-intro .main-text h2 {
   margin: 60px 0 0 30px;
+  font-family: 'Merriweather', serif;
   font-size: 40px;
+  line-height: 1.2;
 }
 
 @media (min-width: 778px) {

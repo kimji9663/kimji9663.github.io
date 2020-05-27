@@ -2,7 +2,6 @@ import React, {Fragment} from "react"
 import { Link } from "gatsby"
 import { Controller, Scene } from 'react-scrollmagic';
 import { Tween } from 'react-gsap';
-// import { rhythm, scale } from "../utils/typography"
 
 const Layout = ({ location, title, children }) => {
   const rootPath = `${__PATH_PREFIX__}/`
@@ -26,7 +25,7 @@ const Layout = ({ location, title, children }) => {
                 ease: 'linear'}
                 }
                 to={{
-                css: {background: 'rgba(255,255,255,.5)', borderBottom: 'none', overflow: 'hidden'},
+                css: {background: 'rgba(255,255,255,.5)', borderBottom: 'none'},
                 ease: 'linear'}
                 }
                 totalProgress={progress}
