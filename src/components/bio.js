@@ -53,12 +53,12 @@ const Bio = () => {
           <strong>{author}</strong>의<br/> 공부하고 기록하는<br/> 블로그 입니다. <br></br>
         </h2>
         {` `}
-        {/* <a style={{
+        <a style={{
           fontSize: `25px`,
         }} 
           href={`https://www.facebook.com/${social.facebook}`}>
           페이스북
-        </a> */}
+        </a>
       </div>
     </Fragment>
   )
