@@ -1,4 +1,13 @@
 @import './breakpoint.scss';
+@font-face { 
+    font-family: 'Montserrat'; 
+    src: url('../font/Montserrat-Black.ttf'), format('truetype')
+}
+@font-face { 
+    font-family: 'Merriweather'; 
+    src: url('../font/Merriweather-Black.ttf'), format('truetype')
+}
+
 
 /* TABLE OF CONTENTS
 -------------------------------------------------*/
@@ -9,7 +18,7 @@
         - NAVIGATION
         - CONTENTS
             - TOP INTRO
-            - WORK
+            - WORK,
         - FOOTER
     - SVG
     - ANIMATION
@@ -92,7 +101,7 @@ $secondaryColor: #119cff;
     height: 0;
     background: transparent;
     padding: ($padding + px) + ' ' + 0;
-    font-family: Montserrat,sans-serif;
+    font-family:'Montserrat', sans-serif;
 
     .section--before {
         height: 110vh;
@@ -117,18 +126,17 @@ $secondaryColor: #119cff;
 
         h1 {
             margin: 0;
-            font-family: Montserrat,sans-serif;
         }
 
         a {
-            color: #3d3e3d;
+            color: #020a02;
         }
     }
 
     .main-title {
         position: relative;
         margin: 0;
-        padding-top: 2px;
+        padding-top: 0;
         line-height: 1;
         font-size: $h1FontSize + rem;
 
@@ -350,7 +358,9 @@ $secondaryColor: #119cff;
 
         h2 {
             margin: 60px 0 0 30px;
+            font-family: 'Merriweather', serif;
             font-size: 40px;
+            line-height: 1.2;
 
             @include breakpoint('tablet'){
                 font-size: 100px;
