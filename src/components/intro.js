@@ -47,6 +47,7 @@ const Intro = () => {
                                             <span className="none">Gatsby</span>
                                         </p>
                                         <p className="project__ctrb">Publishing 100%</p>
+                                        <p className="project__info">React기반의 정적 페이지 생성 프레임워크 Gatsby를 이용하여 제작한 SPA.</p>
                                     </div>
                                 </div>
                             </li>
@@ -77,6 +78,7 @@ const Intro = () => {
                                             <span className="javascript">jQuery</span>
                                         </p>
                                         <p className="project__ctrb">Publishing 80%</p>
+                                        <p className="project__info">반응형으로 구현된 자사 솔루션 소개 페이지. <br /> 메인의 레이아웃과 상단 슬라이드를 제외한 모든 페이지 구현.</p>
                                     </div>
                                 </div>
                             </li>
@@ -109,6 +111,7 @@ const Intro = () => {
                                             <span className="none">Bootstrap</span>
                                         </p>
                                         <p className="project__ctrb">Publishing 100%</p>
+                                        <p className="project__info">반응형으로 구현된 자사 홈페이지.</p>
                                     </div>
                                 </div>
                             </li>
@@ -139,6 +142,7 @@ const Intro = () => {
                                             <span className="javascript">jQuery</span>
                                         </p>
                                         <p className="project__ctrb">Publishing 50%</p>
+                                        <p className="project__info">적응형으로 구현된 다국어 지원 해외직구 쇼핑몰. <br /> 서브 코더로 기여. <br /> 상세 기여도 : PC 30% / 모바일 70%</p>
                                     </div>
                                 </div>
                             </li>
