@@ -60,10 +60,6 @@ h2 {
   }
 }
 
-p {
-  margin-bottom: 1.5rem;
-}
-
 a {
   color: #000;
   text-decoration: none;
@@ -219,16 +215,13 @@ a {
   border-right: 1px solid #ccc;
   background: #fff;
   margin: 0 auto;
-  padding: 5px 20px;
+  padding: 5px 20px 30px;
 }
 
 #contents .list__wrap article {
-  margin: 15px 0;
-  padding: 15px;
-  border-radius: 15px;
+  padding: 30px 15px;
+  border-bottom: 1px solid #ccc;
   background: #fff;
-  -webkit-box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.3);
-          box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.3);
 }
 
 #contents .list__wrap h3 {
@@ -245,10 +238,31 @@ a {
   border-right: 1px solid #ccc;
   background: #fff;
   margin: 70px auto 0;
-  padding: 5px 30px;
+  padding: 20px 40px;
   border-top: 1px solid #ccc;
   border-bottom: 1px solid #ccc;
   border-radius: 20px;
+}
+
+#contents .view__wrap h1, #contents .view__wrap h2, #contents .view__wrap h3, #contents .view__wrap h4, #contents .view__wrap h5, #contents .view__wrap h6 {
+  margin-bottom: 10px;
+}
+
+#contents .view__wrap p, #contents .view__wrap li {
+  margin-bottom: 10px;
+  line-height: 1.5;
+}
+
+#contents .view__wrap li {
+  margin-left: 16px;
+}
+
+#contents .view__wrap .title__wrap {
+  margin-bottom: 50px;
+}
+
+#contents .view__wrap .title {
+  margin-bottom: 0;
 }
 
 #contents .other-post {

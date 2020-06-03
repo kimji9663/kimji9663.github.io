@@ -47,6 +47,9 @@ console.log(name);
 console.log('rendering list');
 ```
 
+<br />
+<br />
+
 3. shouldComponentUpdate 함수를 만들고 현재 state가 새로운 값과 일치하지 않을때만 true, 즉 랜더링되도록 한다.
 
 ```javascript
