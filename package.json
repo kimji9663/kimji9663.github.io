@@ -24,6 +24,7 @@
     "gatsby-source-filesystem": "^2.1.46",
     "gatsby-transformer-remark": "^2.6.48",
     "gatsby-transformer-sharp": "^2.3.13",
+    "gh-pages": "^2.2.0",
     "gsap": "^3.2.6",
     "prismjs": "^1.19.0",
     "react": "^16.12.0",
@@ -41,7 +42,7 @@
   "devDependencies": {
     "prettier": "^1.19.1"
   },
-  "homepage": "https://github.com/gatsbyjs/gatsby-starter-blog#readme",
+  "homepage": "https://kimji9663.netlify.com/",
   "keywords": [
     "gatsby"
   ],
