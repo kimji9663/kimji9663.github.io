@@ -1010,6 +1010,12 @@ a {
   padding: 0.25rem 0.5rem;
 }
 
+.gatsby-highlight pre[class="language-html"]::before {
+  content: "html";
+  color: #ffffff;
+  background: #f67925;
+}
+
 .gatsby-highlight pre[class="language-css"]::before {
   content: "css";
   color: #ffffff;
