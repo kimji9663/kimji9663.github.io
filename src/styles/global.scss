@@ -900,6 +900,11 @@ $secondaryColor: #119cff;
             }
         }
         
+        &[class="language-html"]::before {
+            content: "html";
+            color: #ffffff;
+            background: #f67925;
+        }
         &[class="language-css"]::before {
             content: "css";
             color: #ffffff;

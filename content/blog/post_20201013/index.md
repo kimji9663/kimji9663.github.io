@@ -64,6 +64,6 @@ css변수 : css에서 정의해서 사용할 수 있는 변수명 앞에 '--'를
 <div class="c">Hello world!</div>
 ```
 
-
+[DEMO link →](https://codepen.io/kimji9663/pen/vYKNXBW)
 
 
