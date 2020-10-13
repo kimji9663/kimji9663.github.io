@@ -1,6 +1,6 @@
 ---
-title: AJAX란?
-date: "2020-07-03"
+title: :root와 css변수
+date: "2020-10-13"
 ---
 
 ## :root와 css변수
